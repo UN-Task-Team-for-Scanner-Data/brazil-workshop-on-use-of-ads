@@ -1,0 +1,43 @@
+---
+title: "Event agenda"
+format:
+  html:
+    toc: true
+    toc-expand: 2
+---
+
+# Workshop Format and Structure
+
+The workshop is proposed as a **five-day virtual event**, combining synchronous and asynchronous activities, to balance live interaction with flexibility for participants.
+
+-   **Synchronous sessions** are proposed for **Monday, Wednesday, and Friday**, from **10:00 to 12:00 (Brasília time, GMT-3)**. These sessions would focus on conceptual discussions, methodological guidance, live demonstrations, and interactive exchanges with the Task Team.
+
+-   **Asynchronous activities** are proposed for **Tuesday and Thursday**, allowing participants to engage with selected materials, exercises, or practical tasks at their own pace. These activities would build on the content of the synchronous sessions and reinforce key concepts and tools
+
+# Day by day agenda
+
+## Monday June 22
+
+|  |  |
+|----------------------------------|--------------------------------------|
+| **Session** | **Speakers / Facilitator** |
+| Introduction to the workshop and tour de table | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda /Lincoln Teixeira da Silva /Brunoxxxxxx Garcia/ Paulo Tostes dos Santos (UN Regional Hub, IBGE) |
+| Overview of alternative data sources for CPI compilation (Scanner data, web scraping, APIs, administrative data) | Federico Polidoro (UNTT, World Bank) |
+| Overview of the main challenges to obtain alternative data for CPI compilation | Federico Polidoro (UNTT, World Bank) |
+| Alternative data preparation, cleaning, and classification for price statistics. Illustration for Tuesday asynchronous activities | Sandra Andric (UNTT, Statistics Canada), Serge Goussev (UNTT, Statistics Canada) |
+
+## Tuesday June 23
+
+TBC
+
+## Wednesday June 24
+
+TBC
+
+## Thrusday June 24
+
+TBC
+
+## Friday June 26
+
+TBC
