@@ -19,15 +19,11 @@ The workshop is proposed as a **five-day virtual event**, combining synchronous 
 ## Monday June 22
 
 | Time | **Session** | **Speakers / Facilitator** |
-|----------------|---------------------------------|--------------------|
+|------------------|---------------------------------|---------------------|
 | 10:00 – 10:15 | Introduction to the workshop and tour de table | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda /Lincoln |
-| 10:15 – 10:50 | Overview of alternative data sources for CPI compilation (Scanner data,
-web scraping, APIs, administrative data) | Federico Polidoro (UNTT, World Bank) |
-| 10:50 – 11:15 | Overview of the main challenges to obtain alternative data for CPI
-compilation | Federico Polidoro (UNTT, World Bank) |
-| 11:15 – 12:00 | Alternative data preparation, cleaning, and classification for price
-statistics. Illustration for Tuesday asynchronous activities | Sandra Andric (UNTT, Statistics Canada), Serge Goussev (UNTT, Statistics
-Canada) |
+| 10:15 – 10:50 | Overview of alternative data sources for CPI compilation (Scanner data, web scraping, APIs, administrative data) | Federico Polidoro (UNTT, World Bank) |
+| 10:50 – 11:15 | Overview of the main challenges to obtain alternative data for CPI compilation | Federico Polidoro (UNTT, World Bank) |
+| 11:15 – 12:00 | Alternative data preparation, cleaning, and classification for price statistics. Illustration for Tuesday asynchronous activities | Sandra Andric (UNTT, Statistics Canada), Serge Goussev (UNTT, Statistics Canada) |
 
 ## Tuesday June 23
 
