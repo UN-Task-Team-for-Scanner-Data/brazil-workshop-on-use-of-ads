@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Use of Alternative Data Sources for Consumer Price Statistics"
+  title: "Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics"
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/
   issue-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads//issues/new
   repo-actions: [source, issue]
@@ -14,7 +14,7 @@ website:
   navbar:
     background: primary
     search: true
-    title: "2026 Brazil Workshop on the Use of Alternative Data Sources for Consumer Price Statistics"
+    title: "Use of Alternative Data Sources for Consumer Price Statistics"
 
     right:
       - icon: globe
