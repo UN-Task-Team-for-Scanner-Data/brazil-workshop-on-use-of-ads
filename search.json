@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "content/agenda.html",
+    "href": "content/agenda.html",
+    "title": "Event agenda",
+    "section": "",
+    "text": "The workshop is proposed as a five-day virtual event, combining synchronous and asynchronous activities, to balance live interaction with flexibility for participants.\n\nSynchronous sessions are proposed for Monday, Wednesday, and Friday, from 10:00 to 12:00 (Brasília time, GMT-3). These sessions would focus on conceptual discussions, methodological guidance, live demonstrations, and interactive exchanges with the Task Team.\nAsynchronous activities are proposed for Tuesday and Thursday, allowing participants to engage with selected materials, exercises, or practical tasks at their own pace. These activities would build on the content of the synchronous sessions and reinforce key concepts and tools"
+  },
+  {
+    "objectID": "content/agenda.html#monday-june-22",
+    "href": "content/agenda.html#monday-june-22",
+    "title": "Event agenda",
+    "section": "Monday June 22",
+    "text": "Monday June 22\n\n\n\n\n\n\n\n\nTime\nSession\nSpeakers / Facilitator\n\n\n\n\n10:00 – 10:15\nIntroduction to the workshop and tour de table\nTanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda /Lincoln\n\n\n\nTeixeira da Silva /Bruno Garcia/ Paulo Tostes dos Santos (UN Regional Hub, IBGE) | | 10:15 – 10:50 | Overview of alternative data sources for CPI compilation (Scanner data, web scraping, APIs, administrative data) | Federico Polidoro (UNTT, World Bank) | | 10:50 – 11:15 | Overview of the main challenges to obtain alternative data for CPI compilation | Federico Polidoro (UNTT, World Bank) | | 11:15 – 12:00 | Alternative data preparation, cleaning, and classification for price statistics. Illustration for Tuesday asynchronous activities | Sandra Andric (UNTT, Statistics Canada), Serge Goussev (UNTT, Statistics Canada) |"
+  },
+  {
+    "objectID": "content/agenda.html#tuesday-june-23",
+    "href": "content/agenda.html#tuesday-june-23",
+    "title": "Event agenda",
+    "section": "Tuesday June 23",
+    "text": "Tuesday June 23\nAsynchronous Activities (self paced)"
+  },
+  {
+    "objectID": "content/agenda.html#wednesday-june-24",
+    "href": "content/agenda.html#wednesday-june-24",
+    "title": "Event agenda",
+    "section": "Wednesday June 24",
+    "text": "Wednesday June 24\nTBC"
+  },
+  {
+    "objectID": "content/agenda.html#thrusday-june-24",
+    "href": "content/agenda.html#thrusday-june-24",
+    "title": "Event agenda",
+    "section": "Thrusday June 24",
+    "text": "Thrusday June 24\nAsynchronous Activities (self paced)"
+  },
+  {
+    "objectID": "content/agenda.html#friday-june-26",
+    "href": "content/agenda.html#friday-june-26",
+    "title": "Event agenda",
+    "section": "Friday June 26",
+    "text": "Friday June 26\nTBC"
+  },
+  {
+    "objectID": "content/index.html",
+    "href": "content/index.html",
+    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "section": "",
+    "text": "Host Country: Brazil\nOrganizers:\n\nUN Regional Hub for Big Data and Data Science in Brazil\nUN Task Team on Scanner Data\n\nDates: 22–26 June 2026\nFormat: Fully virtual\nWorking Language: English\n\n\n\n Back to top"
+  }
+]
