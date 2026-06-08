@@ -1,0 +1,15 @@
+# Site for the 2026 Brazil Workshop on the Use of Alternative Data Sources for Consumer Price Statistics
+
+**Host Country**: Brazil
+
+**Organizers**:
+
+-   UN Regional Hub for Big Data and Data Science in Brazil
+
+-   UN Task Team on Scanner Data
+
+**Dates**: 22–26 June 2026
+
+**Format**: Fully virtual
+
+**Working Language**: English
