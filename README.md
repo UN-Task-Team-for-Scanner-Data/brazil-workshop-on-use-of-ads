@@ -1,5 +1,9 @@
 # Site for the 2026 Brazil Workshop on the Use of Alternative Data Sources for Consumer Price Statistics
 
+[**Visit the event site for more details**](https://un-task-team-for-scanner-data.github.io/brazil-workshop-on-use-of-ads/content/)
+
+## Event summary
+
 **Host Country**: Brazil
 
 **Organizers**:
@@ -13,3 +17,16 @@
 **Format**: Fully virtual
 
 **Working Language**: English
+
+## Repository structure
+
+```
+├── data/                   # Placeholder for data used in the examples
+│
+├── notebooks/              # Placeholder for notebooks used in the examples
+│
+└── content/                # Event site content 
+    ├── presentations/      # Store of presentations for each event
+    ├── images/             # Folder to store images used for the site
+    └── *.qmd               # Quarto files part of event site
+```
