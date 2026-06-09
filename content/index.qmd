@@ -6,11 +6,25 @@ format:
     toc-expand: 2
 ---
 
+:::::: columns
+::: {.column width="50%"}
+![](https://unstats.un.org/bigdata/assets/img/logo/logo_2021_long.png)
+:::
+
+::: {.column width="50%"}
+![](https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2025_04/unbigdata_hub.png)
+:::
+::::::
+
+
+# Key information about the event
+
 **Host Country**: Brazil
 
 **Organizers**:
 
 -   UN Regional Hub for Big Data and Data Science in Brazil
+
 -   UN Task Team on Scanner Data
 
 **Dates**: 22–26 June 2026
@@ -18,3 +32,42 @@ format:
 **Format**: Fully virtual
 
 **Working Language**: English
+
+# Background on the event
+
+## Purpose
+
+The increasing availability of data sources, alternative to traditional data collection, has opened new opportunities for improving the compilation of consumer price statistics. Amongst these sources, scanner data, web scraped, and administrative data are the more prominent. Many National Statistical Offices (NSOs) are actively exploring the use of these new sources of data to enhance price measurement, expand product coverage, and improve timeliness and quality of Consumer Price Indices (CPI).
+
+In response to this growing interest, the UN Task Team on Scanner Data has developed a rich set of methodological materials, guidelines, and practical tools, made available through its public wiki and related repositories. These resources provide a solid foundation for NSOs at different stages of adoption.
+
+Building on this work, the UN Regional Hub for Big Data in Brazil proposes to jointly organize, with the UN Task Team on Scanner Data, a regional workshop aimed at supporting NSOs in Latin America and the Caribbean in their practical use of the new data sources for CPI compilation with a focus on scanner data use.
+
+## Objectives
+
+The main objective of the workshop is to strengthen technical and methodological capacities of NSOs in the use of alternative data sources and in particular of scanner data, to produce consumer price statistics.
+
+More specifically, the workshop aims to:
+
+-   Introduce the main concepts, challenges, and opportunities associated with the use of alternative data sources in CPI compilation;
+-   Present the methodological guidance and tools developed by the UN Task Team on alternative data sources focusing on Scanner Data;
+-   Provide hands-on exposure to selected tools and workflows, based on existing Task Team materials;
+-   Facilitate peer exchange among NSOs on institutional, technical, and operational aspects of working with scanner data;
+-   Support NSOs in identifying next steps for implementing or scaling alternative data sources, in particular scanner data, solutions in their national contexts.
+
+## Target Audience
+
+The workshop is targeted at professionals from NSOs in Latin America and the Caribbean, including:
+
+-   Statisticians and methodologists working on price statistics and CPI;
+-   Data scientists and analysts involved in approaching the use of alternative data sources;
+-   IT and technical staff supporting statistical production systems. Participants are expected to have basic familiarity with price statistics and an interest in applied work with data and tools.
+
+## Why participate?
+
+By the end of the workshop, participants are expected to:
+
+-   Have a clearer understanding of how alternative data sources can be used in price statistics;
+-   Be familiar with key methodological guidance and tools developed by the UN Task Team;
+-   Gain practical insights from peer experiences across the region;
+-   Identify concrete next steps for advancing scanner data initiatives within their NSOs.
