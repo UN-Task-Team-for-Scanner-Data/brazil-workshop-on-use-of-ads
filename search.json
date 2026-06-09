@@ -39,13 +39,48 @@
     "href": "content/agenda.html#friday-june-26",
     "title": "Event agenda",
     "section": "Friday June 26",
-    "text": "Friday June 26\n\n\n\n\n\n\n\n\nTime\nSession\nSpeakers / Facilitator\n\n\n\n\n10:00 – 10:45\nReport on the asynchronous activities and further discussion on multilateral indices\nParticipants / All the speakers of Day 2\n\n\n10:45 – 11:15\nQuality assurance, validation, and comparison with traditional price data\nTanya Flower (UNTT, UK ONS)\n\n\n11:15 – 11:45\nInstitutional and operational considerations for integrating scanner data into regular statistical production\nHelen Sands (UNTT, UK ONS)\n\n\n11:45 – 12:00\nConclusion and way forward\nTanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln\n\n\n\nTeixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE) |"
+    "text": "Friday June 26\n\n\n\n\n\n\n\n\nTime\nSession\nSpeakers / Facilitator\n\n\n\n\n10:00 – 10:45\nReport on the asynchronous activities and further discussion on multilateral indices\nParticipants / All the speakers of Day 2\n\n\n10:45 – 11:15\nQuality assurance, validation, and comparison with traditional price data\nTanya Flower (UNTT, UK ONS)\n\n\n11:15 – 11:45\nInstitutional and operational considerations for integrating scanner data into regular statistical production\nHelen Sands (UNTT, UK ONS)\n\n\n11:45 – 12:00\nConclusion and way forward\nTanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE)"
   },
   {
-    "objectID": "content/index.html",
-    "href": "content/index.html",
-    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "objectID": "content/multilateral_examples.html",
+    "href": "content/multilateral_examples.html",
+    "title": "Examples: Tools and packages for multilateral indices",
     "section": "",
-    "text": "Host Country: Brazil\nOrganizers:\n\nUN Regional Hub for Big Data and Data Science in Brazil\nUN Task Team on Scanner Data\n\nDates: 22–26 June 2026\nFormat: Fully virtual\nWorking Language: English\n\n\n\n Back to top"
+    "text": "CautionWIP\n\n\n\nThis page will be updated soon\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "content/processing_examples.html",
+    "href": "content/processing_examples.html",
+    "title": "Examples: Alternative data preparation, cleaning, and classification",
+    "section": "",
+    "text": "CautionWIP\n\n\n\nThis page will be updated soon\n\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "content/index.html#purpose",
+    "href": "content/index.html#purpose",
+    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "section": "Purpose",
+    "text": "Purpose\nThe increasing availability of data sources, alternative to traditional data collection, has opened new opportunities for improving the compilation of consumer price statistics. Amongst these sources, scanner data, web scraped, and administrative data are the more prominent. Many National Statistical Offices (NSOs) are actively exploring the use of these new sources of data to enhance price measurement, expand product coverage, and improve timeliness and quality of Consumer Price Indices (CPI).\nIn response to this growing interest, the UN Task Team on Scanner Data has developed a rich set of methodological materials, guidelines, and practical tools, made available through its public wiki and related repositories. These resources provide a solid foundation for NSOs at different stages of adoption.\nBuilding on this work, the UN Regional Hub for Big Data in Brazil proposes to jointly organize, with the UN Task Team on Scanner Data, a regional workshop aimed at supporting NSOs in Latin America and the Caribbean in their practical use of the new data sources for CPI compilation with a focus on scanner data use."
+  },
+  {
+    "objectID": "content/index.html#objectives",
+    "href": "content/index.html#objectives",
+    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "section": "Objectives",
+    "text": "Objectives\nThe main objective of the workshop is to strengthen technical and methodological capacities of NSOs in the use of alternative data sources and in particular of scanner data, to produce consumer price statistics.\nMore specifically, the workshop aims to:\n\nIntroduce the main concepts, challenges, and opportunities associated with the use of alternative data sources in CPI compilation;\nPresent the methodological guidance and tools developed by the UN Task Team on alternative data sources focusing on Scanner Data;\nProvide hands-on exposure to selected tools and workflows, based on existing Task Team materials;\nFacilitate peer exchange among NSOs on institutional, technical, and operational aspects of working with scanner data;\nSupport NSOs in identifying next steps for implementing or scaling alternative data sources, in particular scanner data, solutions in their national contexts."
+  },
+  {
+    "objectID": "content/index.html#target-audience",
+    "href": "content/index.html#target-audience",
+    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "section": "Target Audience",
+    "text": "Target Audience\nThe workshop is targeted at professionals from NSOs in Latin America and the Caribbean, including:\n\nStatisticians and methodologists working on price statistics and CPI;\nData scientists and analysts involved in approaching the use of alternative data sources;\nIT and technical staff supporting statistical production systems. Participants are expected to have basic familiarity with price statistics and an interest in applied work with data and tools."
+  },
+  {
+    "objectID": "content/index.html#why-participate",
+    "href": "content/index.html#why-participate",
+    "title": "Welcome to the site of the Brazil 2026 Use of Alternative Data Sources for Consumer Price Statistics",
+    "section": "Why participate?",
+    "text": "Why participate?\nBy the end of the workshop, participants are expected to:\n\nHave a clearer understanding of how alternative data sources can be used in price statistics;\nBe familiar with key methodological guidance and tools developed by the UN Task Team;\nGain practical insights from peer experiences across the region;\nIdentify concrete next steps for advancing scanner data initiatives within their NSOs."
   }
 ]
