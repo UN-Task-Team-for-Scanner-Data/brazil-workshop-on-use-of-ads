@@ -1,0 +1,48 @@
+---
+title: "Pre-requisites for asynchronous activities"
+date: June 22, 2026
+format:
+  html:
+    toc: true
+    toc-expand: 2
+---
+
+# The idea
+
+The idea with the asynchronous is to get everyone to engage with the materials and do exercises yourselves. Some simple cases can be done with a pen and paper, however the slightly more involved ones need a little bit of programming.
+
+Thus we recommend the following:
+
+-   If you prefer Python
+
+    -   Make sure you can run Python itself
+
+    -   Get the following packages:
+
+        -   `pandas`
+
+        -   ...
+
+-   If you prefer R
+
+    -   Make sure you can run R
+
+    -   Get the following packages
+
+        -   `dplyr`
+
+        -   `tidyverse`
+
+        -   `PriceIndices`
+
+        -   ...
+
+Note, for simplicity - we included a `conda` environment in this repository that has the relevant packages for both languages
+
+# Options
+
+You have several ways to trial examples:
+
+-   [Google colab](https://colab.research.google.com/) - the absolute simplest is to run notebooks with Google Colab. As long as you have a google account, you can run simple code directly.
+
+-   Your own computer - you can off course run anything on your own computer.
