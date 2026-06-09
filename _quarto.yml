@@ -14,21 +14,30 @@ website:
   navbar:
     background: primary
     search: true
-    title: "Use of Alternative Data Sources for Consumer Price Statistics"
+    title: "Workshop: Alternative Data for Consumer Price Statistics"
 
     right:
-      - icon: globe
-        text: "UN Task e-handbook"
-        href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
-      - icon: person-raised-hand
-        text: "About the UN Task Team"
-        href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
+      - icon: box-arrow-up-right
+        menu:
+          - text: "About the UN Task Team for Scanner Data"
+            href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
+          - text: "Read the UN Task e-handbook"
+            href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
+          - text: "2020 CPI Manual and related resources"
+            href: https://www.imf.org/en/data/statistics/cpi-manual
 
     left:
-      - href: content/index.qmd
+      - icon: house
+        href: content/index.qmd
         text: Home
-      - text: "Agenda"
+      - icon: calendar2-week
+        text: "Agenda"
         href: content/agenda.qmd
+      - icon: code
+        text: Examples
+        menu:
+          - href: content/multilateral_examples.qmd
+          - href: content/processing_examples.qmd
 
 format:
   html:
