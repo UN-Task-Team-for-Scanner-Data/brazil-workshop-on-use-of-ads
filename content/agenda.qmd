@@ -19,7 +19,7 @@ The workshop is proposed as a **five-day virtual event**, combining synchronous 
 ## Monday June 22
 
 | Time | **Session** | **Speakers / Facilitator** |
-|-----------|---------------------------------------|---------------------|
+|----------------|-------------------------------------|-------------------|
 | 10:00 – 10:15 | Introduction to the workshop and tour de table | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda /Lincoln |
 | 10:15 – 10:50 | Overview of alternative data sources for CPI compilation (Scanner data, web scraping, APIs, administrative data) | Federico Polidoro (UNTT, World Bank) |
 | 10:50 – 11:15 | Overview of the main challenges to obtain alternative data for CPI compilation | Federico Polidoro (UNTT, World Bank) |
@@ -34,10 +34,8 @@ Asynchronous Activities (self paced)
 | Time | **Session** | **Speakers / Facilitator** |
 |----------------|-------------------------------------|-------------------|
 | 10:00 – 10:30 | Report on the asynchronous activities | Participants, All the speakers of Day 1 |
-| 10:30 – 11:20 | Use of alternative data sources in CPI compilation. Bilateral and multilateral
-indices | Helen Sands (UK ONS) |
-| 11:20 – 12:00 | Introduction to tools and packages for multilateral indices using
-scanner data and materials for Thursday asynchronous activities | Luigi Palumbo (UNTT, Bank of Italy), Oskar Eugster (UNTT, Statistics Switzerland) |
+| 10:30 – 11:20 | Use of alternative data sources in CPI compilation. Bilateral and multilateral indices | Helen Sands (UK ONS) |
+| 11:20 – 12:00 | Introduction to tools and packages for multilateral indices using scanner data and materials for Thursday asynchronous activities | Luigi Palumbo (UNTT, Bank of Italy), Oskar Eugster (UNTT, Statistics Switzerland) |
 
 ## Thrusday June 24
 
@@ -47,12 +45,9 @@ Asynchronous Activities (self paced)
 
 | Time | **Session** | **Speakers / Facilitator** |
 |----------------|-------------------------------------|-------------------|
-| 10:00 – 10:45 | Report on the asynchronous activities and further discussion on
-multilateral indices | Participants / All the speakers of Day 2 |
-| 10:45 – 11:15 | Quality assurance, validation, and comparison with traditional price
-data | Tanya Flower (UNTT, UK ONS) |
-| 11:15 – 11:45 | Institutional and operational considerations for integrating scanner
-data into regular statistical production | Helen Sands (UNTT, UK ONS) |
-| 11:45 – 12:00 | Conclusion and way forward | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln
-Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN
-Regional Hub, IBGE) |
+| 10:00 – 10:45 | Report on the asynchronous activities and further discussion on multilateral indices | Participants / All the speakers of Day 2 |
+| 10:45 – 11:15 | Quality assurance, validation, and comparison with traditional price data | Tanya Flower (UNTT, UK ONS) |
+| 11:15 – 11:45 | Institutional and operational considerations for integrating scanner data into regular statistical production | Helen Sands (UNTT, UK ONS) |
+| 11:45 – 12:00 | Conclusion and way forward | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln |
+
+Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE) \|
