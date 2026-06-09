@@ -15,6 +15,7 @@ website:
     background: primary
     search: true
     title: "Workshop: Alternative Data for Consumer Price Statistics"
+    repo-url: https://un-task-team-for-scanner-data.github.io/brazil-workshop-on-use-of-ads/content/
 
     right:
       - icon: box-arrow-up-right
@@ -36,8 +37,8 @@ website:
       - icon: code
         text: Examples
         menu:
-          - href: content/multilateral_examples.qmd
           - href: content/processing_examples.qmd
+          - href: content/multilateral_examples.qmd
 
 format:
   html:
