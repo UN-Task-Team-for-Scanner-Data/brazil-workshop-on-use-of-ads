@@ -6,6 +6,17 @@ format:
     toc-expand: 2
 ---
 
+:::::: columns
+::: {.column width="50%"}
+![](https://unstats.un.org/bigdata/assets/img/logo/logo_2021_long.png)
+:::
+
+::: {.column width="50%"}
+![](https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/ibge/2025_04/unbigdata_hub.png)
+:::
+::::::
+
+
 # Key information about the event
 
 **Host Country**: Brazil

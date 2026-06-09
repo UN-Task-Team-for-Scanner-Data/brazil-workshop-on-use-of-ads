@@ -43,5 +43,5 @@ format:
   html:
     toc: true
     theme: 
-      light: flatly
+      light: zephyr
       dark: cyborg
