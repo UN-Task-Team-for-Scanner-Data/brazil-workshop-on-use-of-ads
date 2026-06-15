@@ -1,6 +1,6 @@
 # Site for the 2026 Brazil Workshop on the Use of Alternative Data Sources for Consumer Price Statistics
 
-[**Visit the event site for more details**](https://un-task-team-for-scanner-data.github.io/brazil-workshop-on-use-of-ads/content/)
+[**Visit the event site for more details.**](https://un-task-team-for-scanner-data.github.io/brazil-workshop-on-use-of-ads/content/)
 
 ## Event summary
 
