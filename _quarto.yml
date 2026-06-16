@@ -39,6 +39,8 @@ website:
         menu:
           - href: content/processing_examples.qmd
           - href: content/multilateral_examples.qmd
+          - text: "---"
+          - href: content/pre-reqs.qmd
 
 format:
   html:
