@@ -1,5 +1,5 @@
 ---
-title: "Examples: Tools and packages for multilateral indices"
+title: "Tools and packages for multilateral indices"
 date: June 24, 2026
 format:
   html:
@@ -7,8 +7,18 @@ format:
     toc-expand: 2
 ---
 
-::: callout-caution 
-## WIP
+## Software packages
 
-This page will be updated soon
-:::
+In the module we will use the following software packages:
+
+- **R**:
+  - [PriceIndices](https://cran.r-project.org/web/packages/PriceIndices/index.html)
+  - [IndexNumR](https://cran.r-project.org/web/packages/IndexNumR/index.html)
+- **Python**:
+  - [PyIndexNum](https://pypi.org/project/pyindexnum/) - **WARNING**: Still in beta status
+
+
+## Notebooks
+
+Jupyter notebooks will be loaded in a dedicated folder of the [GitHub repository](https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/tree/multilateral/notebooks). You can load them directly in Google Colab.
+
