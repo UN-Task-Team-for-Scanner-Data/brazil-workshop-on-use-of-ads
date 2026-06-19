@@ -25,6 +25,10 @@ website:
             href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
           - text: "Check out the 2020 CPI Manual and related resources on the IMF's website"
             href: https://www.imf.org/en/data/statistics/cpi-manual
+          - text: "Checkout the Price Statistics Open Data Catalogue"
+            href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
+          - text: "See guidance on making your Price Statistics research reproducible"
+            href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
 
     left:
       - icon: house
@@ -36,7 +40,7 @@ website:
       - icon: code
         text: Examples
         menu:
-          - href: content/processing_examples.qmd
+          - href: notebooks/data-prep-cleaning-classification.ipynb
           - href: content/multilateral_examples.qmd
           - text: "---"
           - href: content/pre-reqs.qmd
