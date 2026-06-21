@@ -420,6 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/data-prep-cleaning-classification.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <p>This page showcases a few examples using open data. Underneath the hood, this is a jupyter notebook that you can download and replicate, including modifying it for other data.</p>
 <div id="fa093634" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
@@ -1035,7 +1036,7 @@ memory usage: 34.2+ KB</code></pre>
 </div>
 </div>
 <p>Now let’s build a basic keyword classifier. We can browse through product descriptions to see what keywords and then specify them as a disctionary to look up</p>
-<div id="2b3a3b9c" class="cell" data-execution_count="23">
+<div id="2b3a3b9c" class="cell" data-execution_count="25">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>keyword_rules <span class="op">=</span> {</span>
@@ -1081,17 +1082,9 @@ memory usage: 34.2+ KB</code></pre>
 <span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>show(confusion_matrix)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\gouss\AppData\Local\Temp\ipykernel_7408\3224443945.py:36: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df_classification_dataset.loc[:, 'PREDICTED_CATEGORY'] = df_classification_dataset['DESCRIP'].apply(rule_based_classifier)</code></pre>
-</div>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_2ee694ce_1d75_4773_a32a_296f120fcc48"><tbody><tr>
+<table id="itables_5e7420a6_caed_43a1_8014_768304126441"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -1158,7 +1151,7 @@ See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stab
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_2ee694ce_1d75_4773_a32a_296f120fcc48:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_5e7420a6_caed_43a1_8014_768304126441:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
