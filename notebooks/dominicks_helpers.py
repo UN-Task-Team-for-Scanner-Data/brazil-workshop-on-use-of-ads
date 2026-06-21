@@ -24,8 +24,7 @@ def download_category(category_name, path="../data/raw/"):
 
 def download_weeks_and_stores(path="../data/raw/"):
     """
-    Placeholder function to download data for weeks and stores.
-    In a real implementation, this would contain logic to access the relevant data source.
+    Download the weeks and stores data from URL on the dff repo
     """
     weeks_url = "https://raw.githubusercontent.com/eurostat/dff/master/CSV/weeks.csv"
     stores_url = "https://raw.githubusercontent.com/eurostat/dff/master/CSV/stores.csv"
@@ -61,15 +60,12 @@ def download_weeks_and_stores(path="../data/raw/"):
         .where(valid_weeks, np.nan)
     )
     df_weeks.to_parquet(f"{path}weeks.parquet", index=False)
-
-def join_data(list_categories):
-    """
-    Placeholder function to join the data for the given categories.
-    """
-    pass
+    
 
 if __name__ == "__main__":
     # Example of reading in a CSV file with pandas
-    download_weeks_and_stores(path="data/raw/")
-    download_category("lnd", path="data/raw/")
-    download_category("gro", path="data/raw/")
+    # download_weeks_and_stores(path="data/raw/")
+
+    # download_category("lnd", path="data/raw/")
+    # download_category("gro", path="data/raw/")
+    download_category("ber", path="data/raw/")
