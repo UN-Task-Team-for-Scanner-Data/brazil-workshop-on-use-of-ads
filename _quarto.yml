@@ -6,7 +6,7 @@ website:
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/
   issue-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads//issues/new
   repo-actions: [source, issue]
-  # favicon: docs/images/logo.png
+  favicon: content\images\logo.png
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true
