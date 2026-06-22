@@ -1,3 +1,13 @@
+"""
+Dominick's helpers -- functions to help download and process dominick's data
+
+The notebook provided in the training showcases various things -- however if you want to operationalize 
+experiments a little more, it often helps to shift exploration code into functions in separate scripts. 
+This script contains helper functions that allow the automated downloading and storing of the data 
+in parquet (a very efficient data format for storage and reading/writing). 
+
+"""
+
 import pandas as pd
 import numpy as np
 
@@ -64,8 +74,8 @@ def download_weeks_and_stores(path="../data/raw/"):
 
 if __name__ == "__main__":
     # Example of reading in a CSV file with pandas
-    # download_weeks_and_stores(path="data/raw/")
+    download_weeks_and_stores(path="data/raw/")
 
-    # download_category("lnd", path="data/raw/")
-    # download_category("gro", path="data/raw/")
-    download_category("ber", path="data/raw/")
+    # download_category("lnd", path="data/ralw/")
+    download_category("gro", path="data/raw/")
+    # download_category("ber", path="data/raw/")
