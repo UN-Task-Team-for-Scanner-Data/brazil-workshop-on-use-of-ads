@@ -557,7 +557,7 @@ This is the <code>init_notebook_mode</code> cell from ITables v2.6.2<br>
 <section id="weekly-data" class="level2">
 <h2 class="anchored" data-anchor-id="weekly-data">Weekly data</h2>
 <p>The raw weekly data comes unstructured. Indeed it doesn’t even have a header, so we have to specify it manually when we import the data</p>
-<div id="0baed859" class="cell">
+<div id="0baed859" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>weeks_url <span class="op">=</span> <span class="st">"https://raw.githubusercontent.com/eurostat/dff/master/CSV/weeks.csv"</span></span>
@@ -570,7 +570,7 @@ This is the <code>init_notebook_mode</code> cell from ITables v2.6.2<br>
 </details>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_fceb9aac_771f_4bde_a6f8_a08370d22c6c"><tbody><tr>
+<table id="itables_600c9037_f76a_4917_9e85_ca82aeebddce"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -637,11 +637,11 @@ This is the <code>init_notebook_mode</code> cell from ITables v2.6.2<br>
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_fceb9aac_771f_4bde_a6f8_a08370d22c6c:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_600c9037_f76a_4917_9e85_ca82aeebddce:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
-                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "classes": ["display", "nowrap"], "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "order": [], "text_in_header_can_be_selected": true, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>WEEK</th>\n      <th>START</th>\n      <th>END</th>\n      <th>SPECIAL_EVENTS</th>\n    </tr>\n  </thead></table>", "data_json": "[[1, \"09/14/89\", \"09/20/89\", \"NaN\"], [2, \"09/21/89\", \"09/27/89\", \"NaN\"], [3, \"09/28/89\", \"10/04/89\", \"NaN\"], [4, \"10/05/89\", \"10/11/89\", \"NaN\"], [5, \"10/12/89\", \"10/18/89\", \"NaN\"], [6, \"10/19/89\", \"10/25/89\", \"NaN\"], [7, \"10/26/89\", \"11/01/89\", \"Halloween\"], [8, \"11/02/89\", \"11/08/89\", \"NaN\"], [9, \"11/09/89\", \"11/15/89\", \"NaN\"], [10, \"11/16/89\", \"11/22/89\", \"NaN\"], [11, \"11/23/89\", \"11/29/89\", \"Thanksgiving\"], [12, \"11/30/89\", \"12/06/89\", \"NaN\"], [13, \"12/07/89\", \"12/13/89\", \"NaN\"], [14, \"12/14/89\", \"12/20/89\", \"NaN\"], [15, \"12/21/89\", \"12/27/89\", \"Christmas\"], [16, \"12/28/89\", \"01/03/90\", \"New-Year\"], [17, \"01/04/90\", \"01/10/90\", \"NaN\"], [18, \"01/11/90\", \"01/17/90\", \"NaN\"], [19, \"01/18/90\", \"01/24/90\", \"NaN\"], [20, \"01/25/90\", \"01/31/90\", \"NaN\"], [21, \"02/01/90\", \"02/07/90\", \"NaN\"], [22, \"02/08/90\", \"02/14/90\", \"NaN\"], [23, \"02/15/90\", \"02/21/90\", \"Presidents Day\"], [24, \"02/22/90\", \"02/28/90\", \"NaN\"], [25, \"03/01/90\", \"03/07/90\", \"NaN\"], [26, \"03/08/90\", \"03/14/90\", \"NaN\"], [27, \"03/15/90\", \"03/21/90\", \"NaN\"], [28, \"03/22/90\", \"03/28/90\", \"Easter\"], [29, \"03/29/90\", \"04/04/90\", \"NaN\"], [30, \"04/05/90\", \"04/11/90\", \"NaN\"], [31, \"04/12/90\", \"04/18/90\", \"NaN\"], [32, \"04/19/90\", \"04/25/90\", \"NaN\"], [33, \"04/26/90\", \"05/02/90\", \"NaN\"], [34, \"05/03/90\", \"05/09/90\", \"NaN\"], [35, \"05/10/90\", \"05/16/90\", \"NaN\"], [36, \"05/17/90\", \"05/23/90\", \"NaN\"], [37, \"05/24/90\", \"05/30/90\", \"Memorial Day\"], [38, \"05/31/90\", \"06/06/90\", \"NaN\"], [39, \"06/07/90\", \"06/13/90\", \"NaN\"], [40, \"06/14/90\", \"06/20/90\", \"NaN\"], [41, \"06/21/90\", \"06/27/90\", \"NaN\"], [42, \"06/28/90\", \"07/04/90\", \"4th of July\"], [43, \"07/05/90\", \"07/11/90\", \"NaN\"], [44, \"07/12/90\", \"07/18/90\", \"NaN\"], [45, \"07/19/90\", \"07/25/90\", \"NaN\"], [46, \"07/26/90\", \"08/01/90\", \"NaN\"], [47, \"08/02/90\", \"08/08/90\", \"NaN\"], [48, \"08/09/90\", \"08/15/90\", \"NaN\"], [49, \"08/16/90\", \"08/22/90\", \"NaN\"], [50, \"08/23/90\", \"08/29/90\", \"NaN\"]]"};
+                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "text_in_header_can_be_selected": true, "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>WEEK</th>\n      <th>START</th>\n      <th>END</th>\n      <th>SPECIAL_EVENTS</th>\n    </tr>\n  </thead></table>", "data_json": "[[1, \"09/14/89\", \"09/20/89\", \"NaN\"], [2, \"09/21/89\", \"09/27/89\", \"NaN\"], [3, \"09/28/89\", \"10/04/89\", \"NaN\"], [4, \"10/05/89\", \"10/11/89\", \"NaN\"], [5, \"10/12/89\", \"10/18/89\", \"NaN\"], [6, \"10/19/89\", \"10/25/89\", \"NaN\"], [7, \"10/26/89\", \"11/01/89\", \"Halloween\"], [8, \"11/02/89\", \"11/08/89\", \"NaN\"], [9, \"11/09/89\", \"11/15/89\", \"NaN\"], [10, \"11/16/89\", \"11/22/89\", \"NaN\"], [11, \"11/23/89\", \"11/29/89\", \"Thanksgiving\"], [12, \"11/30/89\", \"12/06/89\", \"NaN\"], [13, \"12/07/89\", \"12/13/89\", \"NaN\"], [14, \"12/14/89\", \"12/20/89\", \"NaN\"], [15, \"12/21/89\", \"12/27/89\", \"Christmas\"], [16, \"12/28/89\", \"01/03/90\", \"New-Year\"], [17, \"01/04/90\", \"01/10/90\", \"NaN\"], [18, \"01/11/90\", \"01/17/90\", \"NaN\"], [19, \"01/18/90\", \"01/24/90\", \"NaN\"], [20, \"01/25/90\", \"01/31/90\", \"NaN\"], [21, \"02/01/90\", \"02/07/90\", \"NaN\"], [22, \"02/08/90\", \"02/14/90\", \"NaN\"], [23, \"02/15/90\", \"02/21/90\", \"Presidents Day\"], [24, \"02/22/90\", \"02/28/90\", \"NaN\"], [25, \"03/01/90\", \"03/07/90\", \"NaN\"], [26, \"03/08/90\", \"03/14/90\", \"NaN\"], [27, \"03/15/90\", \"03/21/90\", \"NaN\"], [28, \"03/22/90\", \"03/28/90\", \"Easter\"], [29, \"03/29/90\", \"04/04/90\", \"NaN\"], [30, \"04/05/90\", \"04/11/90\", \"NaN\"], [31, \"04/12/90\", \"04/18/90\", \"NaN\"], [32, \"04/19/90\", \"04/25/90\", \"NaN\"], [33, \"04/26/90\", \"05/02/90\", \"NaN\"], [34, \"05/03/90\", \"05/09/90\", \"NaN\"], [35, \"05/10/90\", \"05/16/90\", \"NaN\"], [36, \"05/17/90\", \"05/23/90\", \"NaN\"], [37, \"05/24/90\", \"05/30/90\", \"Memorial Day\"], [38, \"05/31/90\", \"06/06/90\", \"NaN\"], [39, \"06/07/90\", \"06/13/90\", \"NaN\"], [40, \"06/14/90\", \"06/20/90\", \"NaN\"], [41, \"06/21/90\", \"06/27/90\", \"NaN\"], [42, \"06/28/90\", \"07/04/90\", \"4th of July\"], [43, \"07/05/90\", \"07/11/90\", \"NaN\"], [44, \"07/12/90\", \"07/18/90\", \"NaN\"], [45, \"07/19/90\", \"07/25/90\", \"NaN\"], [46, \"07/26/90\", \"08/01/90\", \"NaN\"], [47, \"08/02/90\", \"08/08/90\", \"NaN\"], [48, \"08/09/90\", \"08/15/90\", \"NaN\"], [49, \"08/16/90\", \"08/22/90\", \"NaN\"], [50, \"08/23/90\", \"08/29/90\", \"NaN\"]]"};
                 new ITable(table, dt_args);
             });
         }
@@ -658,7 +658,7 @@ This is the <code>init_notebook_mode</code> cell from ITables v2.6.2<br>
 </div>
 </div>
 <p>Investigating the variable types, we see that we will have to process them to work with them.</p>
-<div id="730a6bb4" class="cell">
+<div id="730a6bb4" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -678,7 +678,7 @@ memory usage: 12.6+ KB</code></pre>
 </div>
 </div>
 <p>To work with the data, we can do a few things: - convert the dates into actual datetime objects to make manipulation easy - create a custom variable that tells us what reference period the weekly file belongs to (say <code>"1996-01"</code>) as we measure the CPI on a monthly basis - evaluate if a week falls cleanly within the month (does it start at the end of one month and end in the beginning of the next one) and if it does fall within the month, what week number is it?<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div id="48ba72b9" class="cell">
+<div id="48ba72b9" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First off, cast the START and </span><span class="re">END</span><span class="co"> columns to datetime</span></span>
@@ -707,7 +707,7 @@ memory usage: 12.6+ KB</code></pre>
 </details>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_597c6d1f_45ce_49db_9511_b997a50501a5"><tbody><tr>
+<table id="itables_4722489e_dc93_491a_a1ca_a1d167bfdcec"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -774,11 +774,11 @@ memory usage: 12.6+ KB</code></pre>
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_597c6d1f_45ce_49db_9511_b997a50501a5:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_4722489e_dc93_491a_a1ca_a1d167bfdcec:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
-                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "classes": ["display", "nowrap"], "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "order": [], "text_in_header_can_be_selected": true, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>WEEK</th>\n      <th>START</th>\n      <th>END</th>\n      <th>SPECIAL_EVENTS</th>\n      <th>REF_PERIOD</th>\n      <th>WEEK_FULLY_IN_MONTH</th>\n      <th>WEEK_OF_MONTH</th>\n    </tr>\n  </thead></table>", "data_json": "[[1, \"1989-09-14\", \"1989-09-20\", \"NaN\", \"1989-09\", 1.0, 1.0], [2, \"1989-09-21\", \"1989-09-27\", \"NaN\", \"1989-09\", 1.0, 2.0], [3, \"1989-09-28\", \"1989-10-04\", \"NaN\", \"1989-09\", \"___NaN___\", \"___NaN___\"], [4, \"1989-10-05\", \"1989-10-11\", \"NaN\", \"1989-10\", 1.0, 1.0], [5, \"1989-10-12\", \"1989-10-18\", \"NaN\", \"1989-10\", 1.0, 2.0], [6, \"1989-10-19\", \"1989-10-25\", \"NaN\", \"1989-10\", 1.0, 3.0], [7, \"1989-10-26\", \"1989-11-01\", \"Halloween\", \"1989-10\", \"___NaN___\", \"___NaN___\"], [8, \"1989-11-02\", \"1989-11-08\", \"NaN\", \"1989-11\", 1.0, 1.0], [9, \"1989-11-09\", \"1989-11-15\", \"NaN\", \"1989-11\", 1.0, 2.0], [10, \"1989-11-16\", \"1989-11-22\", \"NaN\", \"1989-11\", 1.0, 3.0], [11, \"1989-11-23\", \"1989-11-29\", \"Thanksgiving\", \"1989-11\", 1.0, 4.0], [12, \"1989-11-30\", \"1989-12-06\", \"NaN\", \"1989-11\", \"___NaN___\", \"___NaN___\"], [13, \"1989-12-07\", \"1989-12-13\", \"NaN\", \"1989-12\", 1.0, 1.0], [14, \"1989-12-14\", \"1989-12-20\", \"NaN\", \"1989-12\", 1.0, 2.0], [15, \"1989-12-21\", \"1989-12-27\", \"Christmas\", \"1989-12\", 1.0, 3.0], [16, \"1989-12-28\", \"1990-01-03\", \"New-Year\", \"1989-12\", \"___NaN___\", \"___NaN___\"], [17, \"1990-01-04\", \"1990-01-10\", \"NaN\", \"1990-01\", 1.0, 1.0], [18, \"1990-01-11\", \"1990-01-17\", \"NaN\", \"1990-01\", 1.0, 2.0], [19, \"1990-01-18\", \"1990-01-24\", \"NaN\", \"1990-01\", 1.0, 3.0], [20, \"1990-01-25\", \"1990-01-31\", \"NaN\", \"1990-01\", 1.0, 4.0], [21, \"1990-02-01\", \"1990-02-07\", \"NaN\", \"1990-02\", 1.0, 1.0], [22, \"1990-02-08\", \"1990-02-14\", \"NaN\", \"1990-02\", 1.0, 2.0], [23, \"1990-02-15\", \"1990-02-21\", \"Presidents Day\", \"1990-02\", 1.0, 3.0], [24, \"1990-02-22\", \"1990-02-28\", \"NaN\", \"1990-02\", 1.0, 4.0], [25, \"1990-03-01\", \"1990-03-07\", \"NaN\", \"1990-03\", 1.0, 1.0], [26, \"1990-03-08\", \"1990-03-14\", \"NaN\", \"1990-03\", 1.0, 2.0], [27, \"1990-03-15\", \"1990-03-21\", \"NaN\", \"1990-03\", 1.0, 3.0], [28, \"1990-03-22\", \"1990-03-28\", \"Easter\", \"1990-03\", 1.0, 4.0], [29, \"1990-03-29\", \"1990-04-04\", \"NaN\", \"1990-03\", \"___NaN___\", \"___NaN___\"], [30, \"1990-04-05\", \"1990-04-11\", \"NaN\", \"1990-04\", 1.0, 1.0], [31, \"1990-04-12\", \"1990-04-18\", \"NaN\", \"1990-04\", 1.0, 2.0], [32, \"1990-04-19\", \"1990-04-25\", \"NaN\", \"1990-04\", 1.0, 3.0], [33, \"1990-04-26\", \"1990-05-02\", \"NaN\", \"1990-04\", \"___NaN___\", \"___NaN___\"], [34, \"1990-05-03\", \"1990-05-09\", \"NaN\", \"1990-05\", 1.0, 1.0], [35, \"1990-05-10\", \"1990-05-16\", \"NaN\", \"1990-05\", 1.0, 2.0], [36, \"1990-05-17\", \"1990-05-23\", \"NaN\", \"1990-05\", 1.0, 3.0], [37, \"1990-05-24\", \"1990-05-30\", \"Memorial Day\", \"1990-05\", 1.0, 4.0], [38, \"1990-05-31\", \"1990-06-06\", \"NaN\", \"1990-05\", \"___NaN___\", \"___NaN___\"], [39, \"1990-06-07\", \"1990-06-13\", \"NaN\", \"1990-06\", 1.0, 1.0], [40, \"1990-06-14\", \"1990-06-20\", \"NaN\", \"1990-06\", 1.0, 2.0], [41, \"1990-06-21\", \"1990-06-27\", \"NaN\", \"1990-06\", 1.0, 3.0], [42, \"1990-06-28\", \"1990-07-04\", \"4th of July\", \"1990-06\", \"___NaN___\", \"___NaN___\"], [43, \"1990-07-05\", \"1990-07-11\", \"NaN\", \"1990-07\", 1.0, 1.0], [44, \"1990-07-12\", \"1990-07-18\", \"NaN\", \"1990-07\", 1.0, 2.0], [45, \"1990-07-19\", \"1990-07-25\", \"NaN\", \"1990-07\", 1.0, 3.0], [46, \"1990-07-26\", \"1990-08-01\", \"NaN\", \"1990-07\", \"___NaN___\", \"___NaN___\"], [47, \"1990-08-02\", \"1990-08-08\", \"NaN\", \"1990-08\", 1.0, 1.0], [48, \"1990-08-09\", \"1990-08-15\", \"NaN\", \"1990-08\", 1.0, 2.0], [49, \"1990-08-16\", \"1990-08-22\", \"NaN\", \"1990-08\", 1.0, 3.0], [50, \"1990-08-23\", \"1990-08-29\", \"NaN\", \"1990-08\", 1.0, 4.0]]"};
+                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "text_in_header_can_be_selected": true, "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>WEEK</th>\n      <th>START</th>\n      <th>END</th>\n      <th>SPECIAL_EVENTS</th>\n      <th>REF_PERIOD</th>\n      <th>WEEK_FULLY_IN_MONTH</th>\n      <th>WEEK_OF_MONTH</th>\n    </tr>\n  </thead></table>", "data_json": "[[1, \"1989-09-14\", \"1989-09-20\", \"NaN\", \"1989-09\", 1.0, 1.0], [2, \"1989-09-21\", \"1989-09-27\", \"NaN\", \"1989-09\", 1.0, 2.0], [3, \"1989-09-28\", \"1989-10-04\", \"NaN\", \"1989-09\", \"___NaN___\", \"___NaN___\"], [4, \"1989-10-05\", \"1989-10-11\", \"NaN\", \"1989-10\", 1.0, 1.0], [5, \"1989-10-12\", \"1989-10-18\", \"NaN\", \"1989-10\", 1.0, 2.0], [6, \"1989-10-19\", \"1989-10-25\", \"NaN\", \"1989-10\", 1.0, 3.0], [7, \"1989-10-26\", \"1989-11-01\", \"Halloween\", \"1989-10\", \"___NaN___\", \"___NaN___\"], [8, \"1989-11-02\", \"1989-11-08\", \"NaN\", \"1989-11\", 1.0, 1.0], [9, \"1989-11-09\", \"1989-11-15\", \"NaN\", \"1989-11\", 1.0, 2.0], [10, \"1989-11-16\", \"1989-11-22\", \"NaN\", \"1989-11\", 1.0, 3.0], [11, \"1989-11-23\", \"1989-11-29\", \"Thanksgiving\", \"1989-11\", 1.0, 4.0], [12, \"1989-11-30\", \"1989-12-06\", \"NaN\", \"1989-11\", \"___NaN___\", \"___NaN___\"], [13, \"1989-12-07\", \"1989-12-13\", \"NaN\", \"1989-12\", 1.0, 1.0], [14, \"1989-12-14\", \"1989-12-20\", \"NaN\", \"1989-12\", 1.0, 2.0], [15, \"1989-12-21\", \"1989-12-27\", \"Christmas\", \"1989-12\", 1.0, 3.0], [16, \"1989-12-28\", \"1990-01-03\", \"New-Year\", \"1989-12\", \"___NaN___\", \"___NaN___\"], [17, \"1990-01-04\", \"1990-01-10\", \"NaN\", \"1990-01\", 1.0, 1.0], [18, \"1990-01-11\", \"1990-01-17\", \"NaN\", \"1990-01\", 1.0, 2.0], [19, \"1990-01-18\", \"1990-01-24\", \"NaN\", \"1990-01\", 1.0, 3.0], [20, \"1990-01-25\", \"1990-01-31\", \"NaN\", \"1990-01\", 1.0, 4.0], [21, \"1990-02-01\", \"1990-02-07\", \"NaN\", \"1990-02\", 1.0, 1.0], [22, \"1990-02-08\", \"1990-02-14\", \"NaN\", \"1990-02\", 1.0, 2.0], [23, \"1990-02-15\", \"1990-02-21\", \"Presidents Day\", \"1990-02\", 1.0, 3.0], [24, \"1990-02-22\", \"1990-02-28\", \"NaN\", \"1990-02\", 1.0, 4.0], [25, \"1990-03-01\", \"1990-03-07\", \"NaN\", \"1990-03\", 1.0, 1.0], [26, \"1990-03-08\", \"1990-03-14\", \"NaN\", \"1990-03\", 1.0, 2.0], [27, \"1990-03-15\", \"1990-03-21\", \"NaN\", \"1990-03\", 1.0, 3.0], [28, \"1990-03-22\", \"1990-03-28\", \"Easter\", \"1990-03\", 1.0, 4.0], [29, \"1990-03-29\", \"1990-04-04\", \"NaN\", \"1990-03\", \"___NaN___\", \"___NaN___\"], [30, \"1990-04-05\", \"1990-04-11\", \"NaN\", \"1990-04\", 1.0, 1.0], [31, \"1990-04-12\", \"1990-04-18\", \"NaN\", \"1990-04\", 1.0, 2.0], [32, \"1990-04-19\", \"1990-04-25\", \"NaN\", \"1990-04\", 1.0, 3.0], [33, \"1990-04-26\", \"1990-05-02\", \"NaN\", \"1990-04\", \"___NaN___\", \"___NaN___\"], [34, \"1990-05-03\", \"1990-05-09\", \"NaN\", \"1990-05\", 1.0, 1.0], [35, \"1990-05-10\", \"1990-05-16\", \"NaN\", \"1990-05\", 1.0, 2.0], [36, \"1990-05-17\", \"1990-05-23\", \"NaN\", \"1990-05\", 1.0, 3.0], [37, \"1990-05-24\", \"1990-05-30\", \"Memorial Day\", \"1990-05\", 1.0, 4.0], [38, \"1990-05-31\", \"1990-06-06\", \"NaN\", \"1990-05\", \"___NaN___\", \"___NaN___\"], [39, \"1990-06-07\", \"1990-06-13\", \"NaN\", \"1990-06\", 1.0, 1.0], [40, \"1990-06-14\", \"1990-06-20\", \"NaN\", \"1990-06\", 1.0, 2.0], [41, \"1990-06-21\", \"1990-06-27\", \"NaN\", \"1990-06\", 1.0, 3.0], [42, \"1990-06-28\", \"1990-07-04\", \"4th of July\", \"1990-06\", \"___NaN___\", \"___NaN___\"], [43, \"1990-07-05\", \"1990-07-11\", \"NaN\", \"1990-07\", 1.0, 1.0], [44, \"1990-07-12\", \"1990-07-18\", \"NaN\", \"1990-07\", 1.0, 2.0], [45, \"1990-07-19\", \"1990-07-25\", \"NaN\", \"1990-07\", 1.0, 3.0], [46, \"1990-07-26\", \"1990-08-01\", \"NaN\", \"1990-07\", \"___NaN___\", \"___NaN___\"], [47, \"1990-08-02\", \"1990-08-08\", \"NaN\", \"1990-08\", 1.0, 1.0], [48, \"1990-08-09\", \"1990-08-15\", \"NaN\", \"1990-08\", 1.0, 2.0], [49, \"1990-08-16\", \"1990-08-22\", \"NaN\", \"1990-08\", 1.0, 3.0], [50, \"1990-08-23\", \"1990-08-29\", \"NaN\", \"1990-08\", 1.0, 4.0]]"};
                 new ITable(table, dt_args);
             });
         }
@@ -795,7 +795,7 @@ memory usage: 12.6+ KB</code></pre>
 </div>
 </div>
 <p>We can verify the data format now that we did the transformation</p>
-<div id="fdfc91e0" class="cell">
+<div id="fdfc91e0" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -827,21 +827,35 @@ memory usage: 22.0+ KB</code></pre>
 <li>Grooming Products –&gt; could be part of COCIOP 05.6.1.1 - Household cleaning and maintenance products (ND)</li>
 </ul>
 <p>Note - if we had a more extensive example, other Dominick’s categories such as Fabric Softeners, Toothbrushes, and others may fall into one of these categories.</p>
-<div id="b6858d11" class="cell" data-execution_count="22">
+<div id="b6858d11" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_gro <span class="op">=</span> pd.read_parquet(<span class="st">"../data/raw/gro_products.parquet"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_gro[<span class="st">'CATEGORY'</span>] <span class="op">=</span> <span class="st">'GRO'</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>df_lnd <span class="op">=</span> pd.read_parquet(<span class="st">"../data/raw/lnd_products.parquet"</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df_lnd[<span class="st">'CATEGORY'</span>] <span class="op">=</span> <span class="st">'LND'</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>df_combined <span class="op">=</span> pd.concat([df_gro, df_lnd], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>df_classification_dataset <span class="op">=</span> df_combined[[<span class="st">'DESCRIP'</span>,<span class="st">'CATEGORY'</span>]]</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>df_classification_dataset.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> download_category_products(category_name):</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Basic function to download raw UPC data for a given category</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    url <span class="op">=</span> <span class="st">"https://www.chicagobooth.edu/research/kilts/research-data/-/media/enterprise/centers/kilts/datasets/dominicks-dataset/"</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    product_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">upc_csv-files/upc</span><span class="sc">{</span>category_name<span class="sc">}</span><span class="ss">.csv"</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    upc_url <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span>url<span class="sc">}</span><span class="ss">movement_csv-files/w</span><span class="sc">{</span>category_name<span class="sc">}</span><span class="ss">.zip"</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get upc data</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Downloading product data for </span><span class="sc">{</span>category_name<span class="sc">}</span><span class="ss">..."</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.read_csv(product_url, encoding<span class="op">=</span><span class="st">'latin1'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>df_gro <span class="op">=</span> download_category_products(<span class="st">'GRO'</span>)</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>df_gro[<span class="st">'CATEGORY'</span>] <span class="op">=</span> <span class="st">'GRO'</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>df_lnd <span class="op">=</span> download_category_products(<span class="st">'LND'</span>)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>df_lnd[<span class="st">'CATEGORY'</span>] <span class="op">=</span> <span class="st">'LND'</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>df_combined <span class="op">=</span> pd.concat([df_gro, df_lnd], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>df_classification_dataset <span class="op">=</span> df_combined[[<span class="st">'DESCRIP'</span>,<span class="st">'CATEGORY'</span>]]</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>df_classification_dataset.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<pre><code>Downloading product data for GRO...
+Downloading product data for LND...
+&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 2181 entries, 0 to 2180
 Data columns (total 2 columns):
  #   Column    Non-Null Count  Dtype 
@@ -852,14 +866,14 @@ dtypes: object(2)
 memory usage: 34.2+ KB</code></pre>
 </div>
 </div>
-<div id="38370672" class="cell" data-execution_count="3">
+<div id="38370672" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>show(df_classification_dataset.head(<span class="dv">50</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_392017af_f1e5_4871_8fff_04844dd5f94c"><tbody><tr>
+<table id="itables_bf25c27d_8bd1_4333_a100_c33b5dc324af"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -926,11 +940,11 @@ memory usage: 34.2+ KB</code></pre>
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_392017af_f1e5_4871_8fff_04844dd5f94c:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_bf25c27d_8bd1_4333_a100_c33b5dc324af:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
-                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "classes": ["display", "nowrap"], "text_in_header_can_be_selected": true, "order": [], "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>DESCRIP</th>\n      <th>CATEGORY</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"BRUT 33 SPLSH LOT W/\", \"GRO\"], [\"OLD SPICE PUMP ORIGI\", \"GRO\"], [\"OLD SPICE PUMP FRESH\", \"GRO\"], [\"LADY CHOICE SLD REG\", \"GRO\"], [\"~LADY CHIOCE SLD UNS\", \"GRO\"], [\"LADY CHOICE SLD FRES\", \"GRO\"], [\"LADY CHOICE SLD REG\", \"GRO\"], [\"LADY CHOICE SLD UNS\", \"GRO\"], [\"LADY CHOICE SLD FRSH\", \"GRO\"], [\"~LADY CHOICE SLD MEA\", \"GRO\"], [\"~LADYS CHCE SLD SPOR\", \"GRO\"], [\"LADY CHCE R/O UNSC #\", \"GRO\"], [\"LADY'S CHOICE R/O FR\", \"GRO\"], [\"LADYS CHOICE MEAD BR\", \"GRO\"], [\"~LDY CH SLD MUSK 30[\", \"GRO\"], [\"OLD SPICE SOOTHING G\", \"GRO\"], [\"OLD SPICE SOOTHING G\", \"GRO\"], [\"OS COL/HI END DEOD G\", \"GRO\"], [\"OS ASL/COLOGNE GIFT\", \"GRO\"], [\"OS ASL/SHV CRM/STK O\", \"GRO\"], [\"OLD SPI DEOD LIQ MUS\", \"GRO\"], [\"OLD SPI LIQ STK FRSH\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"O/SP CLASSIC STK REG\", \"GRO\"], [\"#O/SPICE SLD A/P MUS\", \"GRO\"], [\"~O/SPICE STICK MUSK\", \"GRO\"], [\"~O/SPICE STICK MUSK\", \"GRO\"], [\"~O/S AFT SH LEATHER#\", \"GRO\"], [\"O/S SHV SENSITIVE #\", \"GRO\"], [\"O/S SHV REG#\", \"GRO\"], [\"OLD SPICE SENS AFTER\", \"GRO\"], [\"OLD SPICE ASL ORIG O\", \"GRO\"], [\"OLD SPICE ASL SENS O\", \"GRO\"], [\"~OLD SPICE A/S COND#\", \"GRO\"], [\"O/S AFTER SHAVE\", \"GRO\"], [\"O/S AFTER SHAVE\", \"GRO\"], [\"O/S AFTER SHV REG #\", \"GRO\"], [\"~OLD SPICE AFTER SHA\", \"GRO\"], [\"~OLD SPICE COLOGNE\", \"GRO\"], [\"O/S HYDRA-GEL SHAVE\", \"GRO\"], [\"~OLD SPICE A/S FRESH\", \"GRO\"], [\"~OLD SPICE A/S FRESH\", \"GRO\"], [\"OLD SPICE COLOGNE SP\", \"GRO\"], [\"O/SP SLD A/P REG\", \"GRO\"]]"};
+                let dt_args = {"layout": {"topStart": "pageLength", "topEnd": "search", "bottomStart": "info", "bottomEnd": "paging"}, "text_in_header_can_be_selected": true, "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      \n      <th>DESCRIP</th>\n      <th>CATEGORY</th>\n    </tr>\n  </thead></table>", "data_json": "[[\"BRUT 33 SPLSH LOT W/\", \"GRO\"], [\"OLD SPICE PUMP ORIGI\", \"GRO\"], [\"OLD SPICE PUMP FRESH\", \"GRO\"], [\"LADY CHOICE SLD REG\", \"GRO\"], [\"~LADY CHIOCE SLD UNS\", \"GRO\"], [\"LADY CHOICE SLD FRES\", \"GRO\"], [\"LADY CHOICE SLD REG\", \"GRO\"], [\"LADY CHOICE SLD UNS\", \"GRO\"], [\"LADY CHOICE SLD FRSH\", \"GRO\"], [\"~LADY CHOICE SLD MEA\", \"GRO\"], [\"~LADYS CHCE SLD SPOR\", \"GRO\"], [\"LADY CHCE R/O UNSC #\", \"GRO\"], [\"LADY'S CHOICE R/O FR\", \"GRO\"], [\"LADYS CHOICE MEAD BR\", \"GRO\"], [\"~LDY CH SLD MUSK 30[\", \"GRO\"], [\"OLD SPICE SOOTHING G\", \"GRO\"], [\"OLD SPICE SOOTHING G\", \"GRO\"], [\"OS COL/HI END DEOD G\", \"GRO\"], [\"OS ASL/COLOGNE GIFT\", \"GRO\"], [\"OS ASL/SHV CRM/STK O\", \"GRO\"], [\"OLD SPI DEOD LIQ MUS\", \"GRO\"], [\"OLD SPI LIQ STK FRSH\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE FRAG GIFT\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"OLD SPICE HIGH ENDVR\", \"GRO\"], [\"O/SP CLASSIC STK REG\", \"GRO\"], [\"#O/SPICE SLD A/P MUS\", \"GRO\"], [\"~O/SPICE STICK MUSK\", \"GRO\"], [\"~O/SPICE STICK MUSK\", \"GRO\"], [\"~O/S AFT SH LEATHER#\", \"GRO\"], [\"O/S SHV SENSITIVE #\", \"GRO\"], [\"O/S SHV REG#\", \"GRO\"], [\"OLD SPICE SENS AFTER\", \"GRO\"], [\"OLD SPICE ASL ORIG O\", \"GRO\"], [\"OLD SPICE ASL SENS O\", \"GRO\"], [\"~OLD SPICE A/S COND#\", \"GRO\"], [\"O/S AFTER SHAVE\", \"GRO\"], [\"O/S AFTER SHAVE\", \"GRO\"], [\"O/S AFTER SHV REG #\", \"GRO\"], [\"~OLD SPICE AFTER SHA\", \"GRO\"], [\"~OLD SPICE COLOGNE\", \"GRO\"], [\"O/S HYDRA-GEL SHAVE\", \"GRO\"], [\"~OLD SPICE A/S FRESH\", \"GRO\"], [\"~OLD SPICE A/S FRESH\", \"GRO\"], [\"OLD SPICE COLOGNE SP\", \"GRO\"], [\"O/SP SLD A/P REG\", \"GRO\"]]"};
                 new ITable(table, dt_args);
             });
         }
@@ -946,14 +960,15 @@ memory usage: 34.2+ KB</code></pre>
 </script>
 </div>
 </div>
-<div id="5da49c6b" class="cell" data-execution_count="4">
+<p>We can evaluate the number of products to classify</p>
+<div id="5da49c6b" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_classification_dataset.groupby(<span class="st">'CATEGORY'</span>).size()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_a165efb6_2be5_4c4b_bd3a_b9d62231b69b"><tbody><tr>
+<table id="itables_8a3d15ac_2e19_43d7_b5fb_1c5e16639824"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -1020,11 +1035,11 @@ memory usage: 34.2+ KB</code></pre>
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_a165efb6_2be5_4c4b_bd3a_b9d62231b69b:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_8a3d15ac_2e19_43d7_b5fb_1c5e16639824:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
-                let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "classes": ["display", "nowrap"], "text_in_header_can_be_selected": true, "order": [], "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>0</th>\n    </tr>\n    <tr>\n      <th>CATEGORY</th>\n      <th></th>\n    </tr>\n  </thead></table>", "data_json": "[[\"GRO\", 1599], [\"LND\", 582]]"};
+                let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>0</th>\n    </tr>\n    <tr>\n      <th>CATEGORY</th>\n      <th></th>\n    </tr>\n  </thead></table>", "data_json": "[[\"GRO\", 1599], [\"LND\", 582]]"};
                 new ITable(table, dt_args);
             });
         }
@@ -1040,8 +1055,8 @@ memory usage: 34.2+ KB</code></pre>
 </script>
 </div>
 </div>
-<p>Now let’s build a basic keyword classifier. We can browse through product descriptions to see what keywords and then specify them as a disctionary to look up</p>
-<div id="2b3a3b9c" class="cell" data-execution_count="25">
+<p>Now let’s build a basic keyword classifier. We can browse through product descriptions to see what keywords and then specify them as a disctionary to look up. The output can be a <a href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a> that tells us how well our classification method is working.</p>
+<div id="2b3a3b9c" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>keyword_rules <span class="op">=</span> {</span>
@@ -1089,7 +1104,7 @@ memory usage: 34.2+ KB</code></pre>
 </details>
 <div class="cell-output cell-output-display">
 <!--| quarto-html-table-processing: none -->
-<table id="itables_5e7420a6_caed_43a1_8014_768304126441"><tbody><tr>
+<table id="itables_7e4220ae_0127_47b3_a6f3_657a6c81791c"><tbody><tr>
     <td style="vertical-align:middle; text-align:left">
     <a href="https://mwouts.github.io/itables/"><svg class="main-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="64" viewbox="0 0 500 400" style="font-family: 'Droid Sans', sans-serif;">
     <g style="fill:#d9d7fc">
@@ -1156,11 +1171,11 @@ memory usage: 34.2+ KB</code></pre>
         async function init() {
             const { ITable, jQuery: $ } = await window._itables_2_6_2;
 
-            document.querySelectorAll("#itables_5e7420a6_caed_43a1_8014_768304126441:not(.dataTable)").forEach(table => {
+            document.querySelectorAll("#itables_7e4220ae_0127_47b3_a6f3_657a6c81791c:not(.dataTable)").forEach(table => {
                 if (!(table instanceof HTMLTableElement))
                     return;
 
-                let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "classes": ["display", "nowrap"], "text_in_header_can_be_selected": true, "order": [], "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      <th>Predicted Category</th>\n      <th>GRO</th>\n      <th>LND</th>\n      <th>Unclassified</th>\n    </tr>\n    <tr>\n      <th>Actual Category</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead></table>", "data_json": "[[\"GRO\", 408, 17, 1174], [\"LND\", 0, 380, 202]]"};
+                let dt_args = {"layout": {"topStart": null, "topEnd": null, "bottomStart": null, "bottomEnd": null}, "text_in_header_can_be_selected": true, "style": {"table-layout": "auto", "width": "auto", "margin": "auto", "caption-side": "bottom"}, "classes": ["display", "nowrap"], "order": [], "table_html": "<table><thead>\n    <tr style=\"text-align: right;\">\n      <th>Predicted Category</th>\n      <th>GRO</th>\n      <th>LND</th>\n      <th>Unclassified</th>\n    </tr>\n    <tr>\n      <th>Actual Category</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead></table>", "data_json": "[[\"GRO\", 408, 17, 1174], [\"LND\", 0, 380, 202]]"};
                 new ITable(table, dt_args);
             });
         }
