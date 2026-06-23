@@ -22,3 +22,7 @@ Of course you are free to use another online platform of your choice or your own
 - Get access to a Google account (pre-existing or new one) before the start of the course
 - Watch two brief introductory videos on Colab: [Introduction to Google Colab](https://www.youtube.com/watch?v=inN8seMm7UI) (3 mins) and [Google Colab features you may have missed](https://www.youtube.com/watch?v=rNgswRZ2C1Y) (5 mins)
 - Experiment with a Google Colab notebook to get familiar with the environment
+
+# Can you replicate the examples we share?
+
+Yes! The example code we show are jupyter notebooks that open seamlessly in Colab. Press the "Open in Colab" button to have the notebook open in Colab - and start modifying it!

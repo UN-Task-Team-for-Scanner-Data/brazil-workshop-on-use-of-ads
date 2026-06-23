@@ -31,7 +31,7 @@ Asynchronous Activities (self paced).
 
 Details on recommended activities outlined on [slide 19 of the last presentation](/content/presentations/3-Data-Preparation-and-Classification.pdf). The [pre-requisites page](/content/pre-reqs.qmd) outlines how you could stand coding without too much difficulty.
 
-If you have any questions, raise questions using the organized all-day meeting or email Sandra and Serge directly.
+If you have any questions, raise questions using the chat of the all-day meeting.
 
 ## Wednesday June 24
 
