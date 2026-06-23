@@ -38,9 +38,12 @@ website:
         text: Examples
         menu:
           - href: content/processing_examples.qmd
-          - href: content/multilateral_examples.qmd
+          - href: notebooks/index_calculation_Python.ipynb
+          - href: notebooks/Index_Calculation_in_R.ipynb
           - text: "---"
           - href: content/pre-reqs.qmd
+          - href: content/multilateral_examples.qmd
+          - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
 
 format:
   html:
