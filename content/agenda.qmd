@@ -39,7 +39,7 @@ If you have any questions, raise questions using the chat of the all-day meeting
 |--------------|------------------------------------|----------------------|
 | 10:00 – 10:30 | Report on the asynchronous activities | Participants, All the speakers of Day 1 |
 | 10:30 – 11:20 | Use of alternative data sources in CPI compilation. Bilateral and multilateral indices | Helen Sands (UK ONS) |
-| 11:20 – 12:00 | Introduction to tools and packages for multilateral indices using scanner data and materials for Thursday asynchronous activities | Luigi Palumbo (UNTT, Bank of Italy), Oskar Eugster (UNTT, Statistics Switzerland) |
+| 11:20 – 12:00 | [Introduction to tools and packages for multilateral indices using scanner data and materials for Thursday asynchronous activities](/content/presentations/4-Multilateral_indices_calculation.pdf) | Luigi Palumbo (UNTT, Bank of Italy), Oskar Eugster (UNTT, Statistics Switzerland) |
 
 ## Thrusday June 24
 
