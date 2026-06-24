@@ -38,10 +38,15 @@ website:
       - icon: code
         text: Examples
         menu:
-          - href: notebooks/data-prep-cleaning-classification.ipynb
+          - href: content/processing_examples.qmd
+          - href: content/pre-reqs.qmd
+          - href: content/multilateral_examples.qmd
           - href: content/multilateral_examples.qmd
           - text: "---"
-          - href: content/pre-reqs.qmd
+          - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
+          - href: notebooks/index_calculation_Python.ipynb
+          - href: notebooks/Index_Calculation_in_R.ipynb
+          - href: notebooks/data-prep-cleaning-classification.ipynb
 
 format:
   html:
