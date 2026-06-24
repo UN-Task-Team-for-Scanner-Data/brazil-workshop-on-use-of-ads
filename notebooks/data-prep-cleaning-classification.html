@@ -308,44 +308,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Agenda</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples-and-practical-exercises" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-code" role="img">
 </i> 
- <span class="menu-text">Examples</span>
+ <span class="menu-text">Examples and practical exercises</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples-and-practical-exercises">    
         <li>
-    <a class="dropdown-item" href="../content/processing_examples.html">
- <span class="dropdown-text">Examples: Alternative data preparation, cleaning, and classification</span></a>
+    <a class="dropdown-item" href="../notebooks/data-prep-cleaning-classification.html">
+ <span class="dropdown-text">Data preparation, cleaning, and classification</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/index_calculation_Python.html">
+ <span class="dropdown-text">Index Calculation exercices in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/Index_Calculation_in_R.html">
+ <span class="dropdown-text">Index Calculation in R</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../content/multilateral_examples.html">
+ <span class="dropdown-text">Tools and packages for price indices</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../content/pre-reqs.html">
  <span class="dropdown-text">Pre-requisites for synchronous and asynchronous coding activities</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../content/multilateral_examples.html">
- <span class="dropdown-text">Tools and packages for multilateral indices</span></a>
+    <a class="dropdown-item" href="../notebooks/Index_Calculation_Exercises_in_R.html">
+ <span class="dropdown-text">Index Calculation exercices in R</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../content/multilateral_examples.html">
- <span class="dropdown-text">Tools and packages for multilateral indices</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../notebooks/Index_Calculation_Exercises_Solutions_in_R.html">
- <span class="dropdown-text">Multilateral Index Calculation in R - Exercises</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/index_calculation_Python.html">
- <span class="dropdown-text">Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/Index_Calculation_in_R.html">
- <span class="dropdown-text">Preparation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/data-prep-cleaning-classification.html">
- <span class="dropdown-text">Data preparation, cleaning, and classification</span></a>
+ <span class="dropdown-text">Index Calculation exercises and solutions in R</span></a>
   </li>  
     </ul>
   </li>
@@ -679,7 +676,7 @@ This is the <code>init_notebook_mode</code> cell from ITables v2.6.2<br>
 </div>
 <p>Investigating the variable types, we see that we will have to process them to work with them.</p>
 <div id="730a6bb4" class="cell" data-execution_count="3">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -816,7 +813,7 @@ memory usage: 12.6+ KB</code></pre>
 </div>
 <p>We can verify the data format now that we did the transformation</p>
 <div id="fdfc91e0" class="cell" data-execution_count="5">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -887,7 +884,7 @@ memory usage: 34.2+ KB</code></pre>
 </div>
 </div>
 <div id="38370672" class="cell" data-execution_count="7">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>show(df_classification_dataset.head(<span class="dv">50</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
@@ -982,7 +979,7 @@ memory usage: 34.2+ KB</code></pre>
 </div>
 <p>We can evaluate the number of products to classify</p>
 <div id="5da49c6b" class="cell" data-execution_count="8">
-<details class="code-fold">
+<details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df_classification_dataset.groupby(<span class="st">'CATEGORY'</span>).size()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>

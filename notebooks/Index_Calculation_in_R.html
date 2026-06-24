@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-24">
 
-<title>index_calculation_in_r – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
+<title>Index Calculation in R – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -336,44 +337,41 @@ window.Quarto = {
 <span class="menu-text">Agenda</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-examples-and-practical-exercises" role="link" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-code" role="img">
 </i> 
- <span class="menu-text">Examples</span>
+ <span class="menu-text">Examples and practical exercises</span>
     </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples">    
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-examples-and-practical-exercises">    
         <li>
-    <a class="dropdown-item" href="../content/processing_examples.html">
- <span class="dropdown-text">Examples: Alternative data preparation, cleaning, and classification</span></a>
+    <a class="dropdown-item" href="../notebooks/data-prep-cleaning-classification.html">
+ <span class="dropdown-text">Data preparation, cleaning, and classification</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/index_calculation_Python.html">
+ <span class="dropdown-text">Index Calculation exercices in Python</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../notebooks/Index_Calculation_in_R.html">
+ <span class="dropdown-text">Index Calculation in R</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../content/multilateral_examples.html">
+ <span class="dropdown-text">Tools and packages for price indices</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../content/pre-reqs.html">
  <span class="dropdown-text">Pre-requisites for synchronous and asynchronous coding activities</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../content/multilateral_examples.html">
- <span class="dropdown-text">Tools and packages for multilateral indices</span></a>
+    <a class="dropdown-item" href="../notebooks/Index_Calculation_Exercises_in_R.html">
+ <span class="dropdown-text">Index Calculation exercices in R</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../content/multilateral_examples.html">
- <span class="dropdown-text">Tools and packages for multilateral indices</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../notebooks/Index_Calculation_Exercises_Solutions_in_R.html">
- <span class="dropdown-text">Multilateral Index Calculation in R - Exercises</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/index_calculation_Python.html">
- <span class="dropdown-text">Dataset</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/Index_Calculation_in_R.html">
- <span class="dropdown-text">Preparation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../notebooks/data-prep-cleaning-classification.html">
- <span class="dropdown-text">Data preparation, cleaning, and classification</span></a>
+ <span class="dropdown-text">Index Calculation exercises and solutions in R</span></a>
   </li>  
     </ul>
   </li>
@@ -421,7 +419,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -441,10 +439,32 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Index Calculation in R</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 24, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
 
 
 <p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/Index_Calculation_in_R.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
@@ -452,12 +472,15 @@ window.Quarto = {
 <h1>Preparation</h1>
 <p>In order to calculate indices in R we need to install some packages that are not pre-installed in google colab.</p>
 <div id="fswRkxAmPbQl" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="5dceec91-c6c0-4e45-c215-f432dee242ea">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'PriceIndices'</span>, <span class="st">'IndexNumR'</span>), <span class="at">repos=</span><span class="st">'https://cran.r-project.org'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set the options such that unnessecary warnings are muted</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">tidyverse.quiet =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Installing packages into ‘/usr/local/lib/R/site-library’
 (as ‘lib’ is unspecified)
@@ -469,10 +492,13 @@ also installing the dependencies ‘plyr’, ‘stringdist’, ‘lpSolve’, �
 </div>
 <p>This notebook presents two packages that are able to calculate multilateral indices. The packages are <code>PriceIndices</code> and <code>IndexNumR</code>. In addition we use popular packages for data manipulation and visualisation.</p>
 <div id="IwWX-OazPbQn" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="cb571c6b-ae97-4530-e4ff-8cd9c6d61a31">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PriceIndices) <span class="co"># for price index calculations</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(IndexNumR)    <span class="co"># for price index calculations</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># for data analysis</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)      <span class="co"># for graphics</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>
 Attaching package: ‘IndexNumR’
@@ -492,9 +518,12 @@ The following object is masked from ‘package:PriceIndices’:
 <p><strong>Note:</strong> Each row represents one product in one month, with its price and quantity sold.</p>
 </blockquote>
 <div id="SEkTjjbDPbQo" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="9f06e809-518e-4617-ef75-293f9512f658">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>url_avg_price_data <span class="ot">&lt;-</span> <span class="st">'https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/alternative-data-sources-price-statistics/refs/heads/main/data/monthly_avg_price_with_qty.csv'</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url_avg_price_data, <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small">
 <caption>A tibble: 6 × 9</caption>
@@ -595,6 +624,8 @@ The following object is masked from ‘package:PriceIndices’:
 </div>
 <p>As we have seen in previous sessions, we need to prepare the data before we can start making calculations.</p>
 <div id="RMWEy7e2PbQo" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for apples in Store 3</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(COICOP5 <span class="sc">%in%</span> <span class="st">"Apples"</span> <span class="sc">&amp;</span> store_id <span class="sc">%in%</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">product_id =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(product)),</span>
@@ -609,6 +640,7 @@ The following object is masked from ‘package:PriceIndices’:
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust price to "per kg" and quantity to "kg sold"</span></span>
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">price =</span> price <span class="sc">/</span> size, <span class="at">quantity =</span> quantity <span class="sc">*</span> size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 </section>
 </section>
@@ -652,6 +684,8 @@ The core of the package are functions to calculate both bilateral and multilater
 </table>
 <p>The formatting can be done using typical data processing functions or by using the function <code>PriceIndices::data_preparing</code>.</p>
 <div id="3CpVl62OPbQq" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="075fede5-707c-4f26-d7c2-123d8a431ca7">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We start by adding the correctly named columns and change the format of time as date</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"This dataframe has the input that PriceIndices needs:</span><span class="sc">\n\n</span><span class="st">"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data_preparing</span>(data,</span>
@@ -684,6 +718,7 @@ The core of the package are functions to calculate both bilateral and multilater
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(index, <span class="at">cols =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">names_to =</span> <span class="st">"method"</span>, <span class="at">values_to =</span> <span class="st">"index"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> time, <span class="at">y =</span> index, <span class="at">group =</span> method, <span class="at">color =</span> method)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span>
 <span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>This dataframe has the input that PriceIndices needs:
 </code></pre>
@@ -975,6 +1010,8 @@ Visualisations help to compare the results:</code></pre>
 </table>
 <p>The columns do not need to have specific names. When calculating indices of multiple months one has to choose whether a fixed base index or a chained index should be returned. By default an unchained period-on-period index is returned.</p>
 <div id="_XgmFo3bZ-kq" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="534669c0-3ab7-4c66-8297-98f39dd46d40">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We need the periods as an integer</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pervar =</span> <span class="fu">monthIndex</span>(<span class="fu">ym</span>(data<span class="sc">$</span>month_year)))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1001,6 +1038,7 @@ Visualisations help to compare the results:</code></pre>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>             <span class="at">prodID =</span> <span class="st">"product_id"</span>,</span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>             )</span>
 <span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The function returns a unnamed matrix that looks like this:</code></pre>
 </div>
@@ -1152,6 +1190,8 @@ Using the apply functions we get a named matrix:
 <p><span class="math display">\[I^{GEKS}_{0,t} = \left(\prod_{k=1}^{n} I_{0,k} \cdot I_{k,t}\right)^{1/n}\]</span></p>
 <p>By averaging over all paths, GEKS reduces the influence of any single period’s product composition.</p>
 <div id="Qk1W9cYrPbQt" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="dac5d2f2-a896-43db-8a34-784735a7d9f1">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># We use a window length of 13 months</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>window_length <span class="ot">&lt;-</span> <span class="dv">13</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">"2020-12-01"</span>) <span class="sc">+</span> <span class="fu">months</span>(<span class="fu">seq</span>(window_length) <span class="sc">-</span> <span class="dv">1</span>) <span class="co"># Dates of the 13 months</span></span>
@@ -1194,6 +1234,7 @@ Using the apply functions we get a named matrix:
 <span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>           <span class="at">GEKS =</span> geks,</span>
 <span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>           <span class="at">indexNumR =</span> geks_in,</span>
 <span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>           <span class="at">PriceIndices =</span> geks_pi<span class="sc">$</span>ccdi)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small">
 <caption>A data.frame: 13 × 4</caption>
@@ -1301,6 +1342,8 @@ Using the apply functions we get a named matrix:
 <p><span class="math display">\[v_i = \sum_t \frac{q_{it}}{\sum_s q_{is}} \cdot \frac{p_{it}}{P_t} \qquad P_t = \frac{\sum_i p_{it} q_{it}}{\sum_i v_i q_{it}}\]</span></p>
 <p>Starting from <span class="math inline">\(v_i = 1\)</span>, we alternate between updating <span class="math inline">\(v_i\)</span> and <span class="math inline">\(P_t\)</span> until convergence.</p>
 <div id="GUAdqwVkPbQt" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="1c968558-2cae-4f22-b001-299bb7790b44">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculation with PriceIndices package</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>gk_pi <span class="ot">&lt;-</span> PriceIndices<span class="sc">::</span><span class="fu">price_indices</span>(data, <span class="at">start=</span><span class="st">"2020-12"</span>, <span class="at">end=</span><span class="st">"2021-12"</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula=</span><span class="st">"gk"</span>, <span class="at">window=</span><span class="dv">13</span>, <span class="at">interval=</span><span class="cn">TRUE</span>)</span>
@@ -1321,6 +1364,7 @@ Using the apply functions we get a named matrix:
 <span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">month =</span> gk_pi<span class="sc">$</span>time,</span>
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">indexNumR =</span> gk_in,</span>
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>           <span class="at">PriceIndices =</span> gk_pi<span class="sc">$</span>gk)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small">
 <caption>A data.frame: 13 × 3</caption>
@@ -1413,6 +1457,8 @@ Using the apply functions we get a named matrix:
 <p><span class="math display">\[\log(p_{it}) = \alpha + \sum_t \beta_t \cdot \mathbf{1}[period=t] + \sum_i \gamma_i \cdot \mathbf{1}[product=i] + \varepsilon_{it}\]</span></p>
 <p>The exponentiated time coefficients <span class="math inline">\(e^{\hat{\beta}_t}\)</span> give the price index. Weighting by expenditure share gives more influence to important products.</p>
 <div id="M7htCQD9PbQt" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="245173da-aef1-4f11-9897-e7efbe0ec779">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculation with PriceIndices package</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>wtpd_pi <span class="ot">&lt;-</span> <span class="fu">price_indices</span>(data, <span class="at">start=</span><span class="st">"2020-12"</span>, <span class="at">end=</span><span class="st">"2021-12"</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">formula=</span><span class="st">"tpd"</span>, <span class="at">window=</span><span class="dv">13</span>, <span class="at">interval=</span><span class="cn">TRUE</span>)</span>
@@ -1432,6 +1478,7 @@ Using the apply functions we get a named matrix:
 <span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">month =</span> wtpd_pi<span class="sc">$</span>time,</span>
 <span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>           <span class="at">indexNumR =</span> wtpd_in,</span>
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>           <span class="at">PriceIndices =</span> wtpd_pi<span class="sc">$</span>tpd)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-display">
 <table class="dataframe caption-top table table-sm table-striped small">
 <caption>A data.frame: 13 × 3</caption>
@@ -1522,6 +1569,8 @@ Using the apply functions we get a named matrix:
 <h2 class="anchored" data-anchor-id="extending-the-index-splicing-methods">Extending the index: splicing methods</h2>
 <p>Both packages include the commonly used splicing methods.</p>
 <div id="Ut-gECdbPbQu" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}" data-outputid="5e0b4b2e-368a-4a9b-a835-2ad6adf91694">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculation of mean splice</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>geks_mean <span class="ot">&lt;-</span> <span class="fu">price_indices</span>(data,</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">start=</span><span class="st">"2020-12"</span>,</span>
@@ -1565,6 +1614,7 @@ Using the apply functions we get a named matrix:
 <span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n\n</span><span class="st">Visualisations help to compare the results:"</span>)</span>
 <span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a><span class="fu">pivot_longer</span>(splices, <span class="at">cols =</span> <span class="sc">-</span><span class="dv">1</span>, <span class="at">names_to =</span> <span class="st">"splice"</span>, <span class="at">values_to =</span> <span class="st">"index"</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x =</span> month, <span class="at">y =</span> index, <span class="at">group =</span> splice, <span class="at">color =</span> splice)) <span class="sc">+</span> <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>The function GEKSIndex warns us if not all bilateral indices have matched items:/n</code></pre>
 </div>
@@ -1678,6 +1728,57 @@ Visualisations help to compare the results:</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
