@@ -2,26 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/index.html</loc>
-    <lastmod>2026-06-23T02:50:15.830Z</lastmod>
+    <lastmod>2026-06-24T12:47:23.206Z</lastmod>
   </url>
   <url>
-    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/multilateral_examples.html</loc>
-    <lastmod>2026-06-23T02:50:15.788Z</lastmod>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/notebooks/index_calculation_Python.html</loc>
+    <lastmod>2026-06-24T12:47:23.211Z</lastmod>
   </url>
   <url>
-    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/processing_examples.html</loc>
-    <lastmod>2026-06-23T02:50:15.830Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/pre-reqs.html</loc>
-    <lastmod>2026-06-23T02:50:15.788Z</lastmod>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/Index_Calculation_Exercises_Solutions_in_R.html</loc>
+    <lastmod>2026-06-24T12:47:23.157Z</lastmod>
   </url>
   <url>
     <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/agenda.html</loc>
-    <lastmod>2026-06-23T02:50:15.783Z</lastmod>
+    <lastmod>2026-06-24T12:47:23.159Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/pre-reqs.html</loc>
+    <lastmod>2026-06-24T12:47:23.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/processing_examples.html</loc>
+    <lastmod>2026-06-24T12:47:23.206Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/content/multilateral_examples.html</loc>
+    <lastmod>2026-06-24T12:47:23.164Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/Index_Calculation_in_R.html</loc>
+    <lastmod>2026-06-24T12:47:23.158Z</lastmod>
   </url>
   <url>
     <loc>https://UN-Task-Team-for-Scanner-Data.github.io/brazil-workshop-on-use-of-ads/notebooks/data-prep-cleaning-classification.html</loc>
-    <lastmod>2026-06-23T02:50:15.835Z</lastmod>
+    <lastmod>2026-06-24T12:47:23.210Z</lastmod>
   </url>
 </urlset>
