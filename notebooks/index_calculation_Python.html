@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-24">
 
-<title>Data preparation, cleaning, and classification – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
+<title>index_calculation_python – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -366,7 +365,7 @@ window.Quarto = {
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/index_calculation_Python.html">
- <span class="dropdown-text">Data preparation, cleaning, and classification</span></a>
+ <span class="dropdown-text">Dataset</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../notebooks/Index_Calculation_in_R.html">
@@ -422,7 +421,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -439,39 +438,14 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Data preparation, cleaning, and classification</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
-<p class="subtitle lead">Examples with some open scanner data</p>
-</div>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 24, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
 
 
 <p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/index_calculation_Python.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
-<div id="cell-2" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-1" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="im">import</span> pyindexnum <span class="im">as</span> pin</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span>:</span>
@@ -483,16 +457,12 @@ window.Quarto = {
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: You may need to restart the session after running this cell</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># (Runtime -&gt; Restart session) and run this cell again to install the</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># required versions of numpy and scipy.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
-<div id="cell-3" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-2" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 <section id="dataset" class="level2">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
@@ -500,11 +470,8 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Note:</strong> Each row represents one product in one month, with its price and quantity sold.</p>
 </blockquote>
-<div id="cell-5" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-4" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data_df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/alternative-data-sources-price-statistics/refs/heads/main/data/monthly_avg_price_with_qty.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 </section>
 <section id="data-preparation" class="level2">
@@ -517,9 +484,7 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Important:</strong> This adjustment affects the Dutot index, which uses arithmetic means of prices and is therefore sensitive to the unit of measurement.</p>
 </blockquote>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="4d0625c9-3c59-4c41-fc79-a71083dec9d6">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-6" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="4d0625c9-3c59-4c41-fc79-a71083dec9d6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filter for apples in Store 3 and cleanup columns</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>select_df <span class="op">=</span> data_df[(data_df[<span class="st">"COICOP5"</span>] <span class="op">==</span> <span class="st">"Apples"</span>) <span class="op">&amp;</span> (data_df[<span class="st">"store_id"</span>] <span class="op">==</span> <span class="dv">3</span>)].copy()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -554,7 +519,6 @@ window.Quarto = {
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'quantity'</span>] <span class="op">=</span> select_df[<span class="st">'quantity'</span>] <span class="op">*</span> select_df[<span class="st">'size'</span>]</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>select_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div id="df-30669c60-7ce5-457c-810e-6c56b3bf91fd" class="colab-df-container">
     <div>
@@ -729,12 +693,9 @@ window.Quarto = {
 </div>
 </div>
 <p>We convert the dataframe into Polars, as this is the library used by PyIndexNum under the hood.</p>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="a63cb4f8-f545-40b0-c834-915a0bcc5b6e">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="a63cb4f8-f545-40b0-c834-915a0bcc5b6e">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>select_pl <span class="op">=</span> pl.from_pandas(select_df)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>select_pl.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <div><style>
 .dataframe > thead > tr,
@@ -844,9 +805,7 @@ window.Quarto = {
 <section id="data-preparation-for-pyindexnum" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation-for-pyindexnum">Data Preparation for pyindexnum</h3>
 <p>The <code>pyindexnum</code> library expects a specific format for the dataframe in order to perform index calculaktions. We will leverage the functions <code>standardize_columns</code> and <code>aggregate_time</code> for this.</p>
-<div id="cell-11" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-10" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use pyindexnum utility to prepare the dataframe</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This function handles date conversion, sorting, and ensures no missing values</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>standard_pl <span class="op">=</span> pin.utils.standardize_columns(</span>
@@ -865,32 +824,25 @@ window.Quarto = {
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    freq<span class="op">=</span><span class="st">"1mo"</span></span>
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 <p>We select the first 13 months for the first window for index calculation, and another window shifted by 1 month for the index extension exercise.</p>
-<div id="cell-13" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-12" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>periods <span class="op">=</span> <span class="bu">sorted</span>(agg_pl[<span class="st">"period"</span>].unique())</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>base_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[:<span class="dv">13</span>]))</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>extend_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[<span class="dv">1</span>:<span class="dv">14</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 <p>Most index formulas require balanced data. We will leverage the utility functions in PyIndexNum to create two different datasets:</p>
 <ol type="1">
 <li>A dataset with only the product common across all periods</li>
 <li>Another dataset with carry forward imputation</li>
 </ol>
-<div id="cell-15" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-14" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>base_common_pl <span class="op">=</span> pin.utils.remove_unbalanced(base_pl)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>extend_common_pl <span class="op">=</span> pin.utils.remove_unbalanced(extend_pl)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>base_imputed_pl <span class="op">=</span> pin.utils.carry_forward_imputation(base_pl, [<span class="st">"aggregated_price"</span>, <span class="st">"aggregated_quantity"</span>])</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>extend_imputed_pl <span class="op">=</span> pin.utils.carry_forward_imputation(extend_pl, [<span class="st">"aggregated_price"</span>, <span class="st">"aggregated_quantity"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
 </section>
 <section id="geks-gini-eltetö-köves-szulc" class="level3">
@@ -900,20 +852,14 @@ window.Quarto = {
 <li><strong>GEKS-Fisher</strong>: Uses the Fisher Ideal index as the bilateral base.</li>
 <li><strong>GEKS-Tornqvist</strong>: Uses the Tornqvist index as the bilateral base.</li>
 </ul>
-<div id="cell-17" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-16" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate GEKS-Fisher and GEKS-Tornqvist</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>geks_f <span class="op">=</span> pin.geks_fisher(base_common_pl)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>geks_t <span class="op">=</span> pin.geks_tornqvist(base_common_pl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
-<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="57dc8700-bfd2-4104-a01a-b4738b932a09">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-17" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="57dc8700-bfd2-4104-a01a-b4738b932a09">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(geks_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>shape: (13, 2)
 ┌────────────┬─────────────┐
@@ -941,19 +887,13 @@ window.Quarto = {
 <section id="time-product-dummy-tpd" class="level3">
 <h3 class="anchored" data-anchor-id="time-product-dummy-tpd">2. Time Product Dummy (TPD)</h3>
 <p>The <strong>TPD index</strong> is a regression-based multilateral index. It models the log of prices as a function of time dummies and product dummies. It is the multilateral generalization of the Jevons index but weighted by expenditure shares. Since this method does not require a balanced panel, we will calculate it using all available data.</p>
-<div id="cell-20" class="cell">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-19" class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Time Product Dummy index</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tpd_index <span class="op">=</span> pin.time_product_dummy(base_pl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 </div>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="156cc323-7f6e-43f1-e93a-37499e836ed2">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-20" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="156cc323-7f6e-43f1-e93a-37499e836ed2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(tpd_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>shape: (13, 2)
 ┌────────────┬─────────────┐
@@ -977,9 +917,7 @@ window.Quarto = {
 └────────────┴─────────────┘</code></pre>
 </div>
 </div>
-<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f9bb530a-84c9-4184-d005-bd021c47e423">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f9bb530a-84c9-4184-d005-bd021c47e423">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the index_value columns to match their index names</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tpd_renamed <span class="op">=</span> tpd_index.rename({<span class="st">"index_value"</span>: <span class="st">"TPD"</span>})</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>geks_f_renamed <span class="op">=</span> geks_f.rename({<span class="st">"index_value"</span>: <span class="st">"GEKS_Fisher"</span>})</span>
@@ -995,7 +933,6 @@ window.Quarto = {
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the merged results</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(merged_indices)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>shape: (13, 4)
 ┌────────────┬──────────┬─────────────┬────────────────┐
@@ -1024,9 +961,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="window-extension-and-splicing-methods">3. Window Extension and Splicing Methods</h3>
 <p>Since multilateral indices are calculated over a fixed window (e.g., 13 months), adding a new month (month 14) would change the results for the previous 13 months if we recalculated everything. To maintain a stable historical series, we use <strong>Splicing</strong>.</p>
 <p>We will demonstrate how to extend the <strong>GEKS-Tornqvist</strong> index using different splice methods: * <strong>Movement Splice</strong>: Links the new movement to the last available index. * <strong>Window Splice</strong>: Links the new window to the period at the start of the window. * <strong>Mean Splice</strong>: Uses the geometric mean of all possible splices within the window.</p>
-<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5b7bf837-eeb7-4eb6-f00b-be9dc3f9c5b6">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5b7bf837-eeb7-4eb6-f00b-be9dc3f9c5b6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the three multilateral methods for the extended dataset</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>extend_geks_f <span class="op">=</span> pin.geks_fisher(extend_common_pl)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>extend_geks_t <span class="op">=</span> pin.geks_tornqvist(extend_common_pl)</span>
@@ -1064,7 +999,6 @@ window.Quarto = {
 <span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Comparison of Extension Methods (Last 5 months):"</span>)</span>
 <span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>):</span>
 <span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(extension_comparison)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>Comparison of Extension Methods (Last 5 months):
 shape: (5, 5)
@@ -1081,9 +1015,7 @@ shape: (5, 5)
 └────────────┴──────────┴──────────┴──────────┴──────────┘</code></pre>
 </div>
 </div>
-<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:474}}" data-outputid="7b559bc3-a6ab-41df-d9a3-42bd33d14035">
-<details open="" class="code-fold">
-<summary>Show the code</summary>
+<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:474}}" data-outputid="7b559bc3-a6ab-41df-d9a3-42bd33d14035">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare historical data (up to 2021-12-01)</span></span>
@@ -1119,7 +1051,6 @@ shape: (5, 5)
 <span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
 <span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1217,57 +1148,6 @@ shape: (5, 5)
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
