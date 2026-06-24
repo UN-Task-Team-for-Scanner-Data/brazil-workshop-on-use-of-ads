@@ -47,6 +47,8 @@ website:
           - href: content/pre-reqs.qmd
           - href: notebooks/Index_Calculation_Exercises_in_R.ipynb
           - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
+          - href: notebooks/index_calculation_exercises_Python.ipynb
+          - href: notebooks/index_calculation_exercises_solutions_Python.ipynb
 
 format:
   html:
