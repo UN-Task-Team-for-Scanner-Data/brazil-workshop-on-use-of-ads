@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2026-06-24">
 
-<title>Tools and packages for multilateral indices – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
+<title>index_calculation_exercises_in_r – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -355,62 +389,79 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#software-packages" id="toc-software-packages" class="nav-link active" data-scroll-target="#software-packages">Software packages</a></li>
-  <li><a href="#notebooks" id="toc-notebooks" class="nav-link" data-scroll-target="#notebooks">Notebooks</a></li>
+  <li><a href="#multilateral-index-calculation-in-r---exercises" id="toc-multilateral-index-calculation-in-r---exercises" class="nav-link active" data-scroll-target="#multilateral-index-calculation-in-r---exercises">Multilateral Index Calculation in R - Exercises</a>
+  <ul class="collapse">
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
+  </ul></li>
+  <li><a href="#index-calculation" id="toc-index-calculation" class="nav-link" data-scroll-target="#index-calculation">Index calculation</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Tools and packages for multilateral indices</h1>
+
+
+
+<p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/Index_Calculation_Exercises_in_R.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<section id="multilateral-index-calculation-in-r---exercises" class="level1">
+<h1>Multilateral Index Calculation in R - Exercises</h1>
+<p>In order to do the exercises we need to load the packages and prepare the dataset first.</p>
+<div id="fswRkxAmPbQl" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install required packages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">'PriceIndices'</span>, <span class="st">'IndexNumR'</span>), <span class="at">repos=</span><span class="st">'https://cran.r-project.org'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">June 24, 2026</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="software-packages" class="level2">
-<h2 class="anchored" data-anchor-id="software-packages">Software packages</h2>
-<p>In the module we will use the following software packages:</p>
-<ul>
-<li><strong>R</strong>:
-<ul>
-<li><a href="https://cran.r-project.org/web/packages/PriceIndices/index.html">PriceIndices</a></li>
-<li><a href="https://cran.r-project.org/web/packages/IndexNumR/index.html">IndexNumR</a></li>
-</ul></li>
-<li><strong>Python</strong>:
-<ul>
-<li><a href="https://pypi.org/project/pyindexnum/">PyIndexNum</a> - <strong>WARNING</strong>: Still in beta status</li>
-</ul></li>
-</ul>
+<p>It is possible to do the exercises using the following packages. However, you can load and use other packages if you want.</p>
+<div id="IwWX-OazPbQn" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(PriceIndices) <span class="co"># for price index calculations</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(IndexNumR)    <span class="co"># for price index calculations</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># for data analysis</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)      <span class="co"># for graphics</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<p>We use the same data as yesterday from the set of food prices in Italian supermarkets provided by Banca d’Italia, Università Campus Bio-Medico and Università degli Studi della Tuscia. The complete dataset is available <a href="https://zenodo.org/records/14927602">here</a>. We aggregated the data by month and added artificial quantities.</p>
+<div id="SEkTjjbDPbQo" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/UN-Task-Team-for-Scanner-Data/alternative-data-sources-price-statistics/refs/heads/main/data/monthly_avg_price_with_qty.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for bananas in Store 3</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(COICOP5 <span class="sc">%in%</span> <span class="st">"Salad"</span> <span class="sc">&amp;</span> store_id <span class="sc">%in%</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         <span class="fu">mutate</span>(<span class="at">product_id =</span> <span class="fu">as.numeric</span>(<span class="fu">factor</span>(product)),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">volume =</span> price <span class="sc">*</span> quantity,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">total_quantity =</span> <span class="cn">NULL</span>, <span class="at">quantity_share =</span> <span class="cn">NULL</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract package size from product description and convert to kg</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">size =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_sub</span>(product, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>) <span class="sc">==</span> <span class="st">"kg"</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(product, <span class="st">"(</span><span class="sc">\\</span><span class="st">d+).(</span><span class="sc">\\</span><span class="st">d+)"</span>)),</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_sub</span>(product, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>) <span class="sc">==</span> <span class="st">"gr"</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(product, <span class="st">"(</span><span class="sc">\\</span><span class="st">d+).(</span><span class="sc">\\</span><span class="st">d+)"</span>)) <span class="sc">/</span> <span class="dv">1000</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_sub</span>(product, <span class="sc">-</span><span class="dv">2</span>, <span class="sc">-</span><span class="dv">1</span>) <span class="sc">==</span> <span class="st">"pz"</span> <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(product, <span class="st">"(</span><span class="sc">\\</span><span class="st">d+).(</span><span class="sc">\\</span><span class="st">d+)"</span>)) <span class="sc">*</span> .<span class="dv">18</span>))</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Adjust price to "per kg" and quantity to "kg sold"</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">price =</span> price <span class="sc">/</span> size, <span class="at">quantity =</span> quantity <span class="sc">*</span> size)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
-<section id="notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="notebooks">Notebooks</h2>
-<p>Jupyter notebooks will be loaded in a dedicated folder of the <a href="https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/tree/multilateral/notebooks">GitHub repository</a>. You can load them directly in Google Colab.</p>
+</section>
+<section id="index-calculation" class="level1">
+<h1>Index calculation</h1>
+<p>The exercise can be done using either the <code>IndexNumR</code> or <code>PriceIndices</code> package. Choose the one you prefer.</p>
+<p><strong>Exercise 1</strong><br>
+Format the dataset such that it works as input for one of the packages and name the data.frame <code>input</code>.</p>
+<div id="3CpVl62OPbQq" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;vscode&quot;,&quot;value&quot;:{&quot;languageId&quot;:&quot;r&quot;}}">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Exercise 2</strong><br>
+Calculate a GEKS-Index using the Fisher formula from December 2020 to December 2022 without splicing.<br>
+<em>Hint: The GEKS-Fisher method is called “geks” in the PriceIndices package</em></p>
+<p><strong>Exercise 3</strong><br>
+Now calculate spliced GEKS-Fisher indices. Use a window splice with a window length of 13 months as well as a movement splice with a window length of 4 months. Compare all three indices.</p>
+<p><strong>Exercise 4</strong><br>
+Calculate an index using the weighted time product dummy or the Geary-Khamis method. From December 2020 to December 2022 and compare it to the GEKS index.</p>
+<p><strong>Bonus</strong> Calculate a GEKS-Jevons index and compare it to a chain linked bilateral Jevons index.</p>
 
 
 </section>
