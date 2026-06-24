@@ -36,17 +36,17 @@ website:
         text: "Agenda"
         href: content/agenda.qmd
       - icon: code
-        text: Examples
+        text: Examples and practical exercises
         menu:
-          - href: content/processing_examples.qmd
-          - href: content/pre-reqs.qmd
-          - href: content/multilateral_examples.qmd
-          - href: content/multilateral_examples.qmd
-          - text: "---"
-          - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
+          - href: notebooks/data-prep-cleaning-classification.ipynb
           - href: notebooks/index_calculation_Python.ipynb
           - href: notebooks/Index_Calculation_in_R.ipynb
-          - href: notebooks/data-prep-cleaning-classification.ipynb
+          - text: "---"
+          - href: content/multilateral_examples.qmd
+          - text: "---"
+          - href: content/pre-reqs.qmd
+          - href: notebooks/Index_Calculation_Exercises_in_R.ipynb
+          - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
 
 format:
   html:
