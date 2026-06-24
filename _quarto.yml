@@ -4,9 +4,7 @@ project:
 website:
   title: "Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics"
   repo-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/
-  issue-url: https://github.com/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads//issues/new
-  repo-actions: [source, issue]
-  # favicon: docs/images/logo.png
+  favicon: content\images\logo.png
   bread-crumbs: true
   page-navigation: true
   back-to-top-navigation: true
@@ -15,21 +13,24 @@ website:
     background: primary
     search: true
     title: "Workshop: Alternative Data for Consumer Price Statistics"
-    repo-url: https://un-task-team-for-scanner-data.github.io/brazil-workshop-on-use-of-ads/content/
 
     right:
       - icon: box-arrow-up-right
         menu:
-          - text: "About the UN Task Team for Scanner Data"
+          - text: "Read about the UN Task Team for Scanner Data"
             href: https://unstats.un.org/bigdata/task-teams/scanner/index.cshtml
-          - text: "Read the UN Task e-handbook"
+          - text: "Read the UN Task Team e-handbook on Utilising Alternative Data Sources"
             href: https://unstats.un.org/wiki/display/GWGSD/Handbook+on+utilising+new+data+sources+in+the+production+of+consumer+price+statistics
-          - text: "2020 CPI Manual and related resources"
+          - text: "Check out the 2020 CPI Manual and related resources on the IMF's website"
             href: https://www.imf.org/en/data/statistics/cpi-manual
+          - text: "Checkout the Price Statistics Open Data Catalogue"
+            href: https://un-task-team-for-scanner-data.github.io/price-stats-data-catalogue/
+          - text: "See guidance on making your Price Statistics research reproducible"
+            href: https://un-task-team-for-scanner-data.github.io/reproducibility-project/docs/
 
     left:
       - icon: house
-        href: content/index.qmd
+        href: index.qmd
         text: Home
       - icon: calendar2-week
         text: "Agenda"
@@ -38,12 +39,14 @@ website:
         text: Examples
         menu:
           - href: content/processing_examples.qmd
-          - href: notebooks/index_calculation_Python.ipynb
-          - href: notebooks/Index_Calculation_in_R.ipynb
-          - text: "---"
           - href: content/pre-reqs.qmd
           - href: content/multilateral_examples.qmd
+          - href: content/multilateral_examples.qmd
+          - text: "---"
           - href: notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb
+          - href: notebooks/index_calculation_Python.ipynb
+          - href: notebooks/Index_Calculation_in_R.ipynb
+          - href: notebooks/data-prep-cleaning-classification.ipynb
 
 format:
   html:
