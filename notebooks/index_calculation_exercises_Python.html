@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2026-06-24">
 
-<title>Index Calculation in Python – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
+<title>Index Calculation exercises in Python – Brazil Workshop on the use of Alternative Data Sources for Consumer Price Statistics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -449,7 +449,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Index Calculation in Python</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+<div class="quarto-title-block"><div><h1 class="title">Index Calculation exercises in Python</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
 </div>
 
 
@@ -472,7 +472,7 @@ window.Quarto = {
 </header>
 
 
-<p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/index_calculation_Python.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
+<p><a href="https://colab.research.google.com/github/UN-Task-Team-for-Scanner-Data/brazil-workshop-on-use-of-ads/blob/main/notebooks/index_calculation_exercises_Python.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"></a></p>
 <div id="cell-2" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
@@ -521,46 +521,47 @@ window.Quarto = {
 <blockquote class="blockquote">
 <p><strong>Important:</strong> This adjustment affects the Dutot index, which uses arithmetic means of prices and is therefore sensitive to the unit of measurement.</p>
 </blockquote>
-<div id="cell-7" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="4d0625c9-3c59-4c41-fc79-a71083dec9d6">
+<div id="cell-7" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filter for apples in Store 3 and cleanup columns</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>select_df <span class="op">=</span> data_df[(data_df[<span class="st">"COICOP5"</span>] <span class="op">==</span> <span class="st">"Apples"</span>) <span class="op">&amp;</span> (data_df[<span class="st">"store_id"</span>] <span class="op">==</span> <span class="dv">3</span>)].copy()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Filter for cured meat in Store 5 and cleanup columns</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>select_df <span class="op">=</span> data_df[(data_df[<span class="st">"COICOP5"</span>] <span class="op">==</span> <span class="st">"Packaged Cured Meats"</span>) <span class="op">&amp;</span> (data_df[<span class="st">"store_id"</span>] <span class="op">==</span> <span class="dv">5</span>)].copy()</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create product_id based on factors, calculate volume, and drop columns</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'product_id'</span>] <span class="op">=</span> select_df[<span class="st">'product'</span>].astype(<span class="st">'category'</span>).cat.codes</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'volume'</span>] <span class="op">=</span> select_df[<span class="st">'price'</span>] <span class="op">*</span> select_df[<span class="st">'quantity'</span>]</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>select_df <span class="op">=</span> select_df.drop(columns<span class="op">=</span>[<span class="st">'total_quantity'</span>, <span class="st">'quantity_share'</span>])</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract package size from product description and convert to kg</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_size(row):</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    product_desc <span class="op">=</span> row[<span class="st">'product'</span>]</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract numeric value using regex (matches digits with optional decimal point)</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    match <span class="op">=</span> re.search(<span class="vs">r"</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="ch">\.</span><span class="op">?</span><span class="dv">\d</span><span class="op">*</span><span class="kw">)</span><span class="vs">"</span>, product_desc)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> match:</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.nan</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> <span class="bu">float</span>(match.group(<span class="dv">1</span>))</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> product_desc.endswith(<span class="st">"kg"</span>):</span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> product_desc.endswith(<span class="st">"gr"</span>):</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val <span class="op">/</span> <span class="dv">1000</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> product_desc.endswith(<span class="st">"pz"</span>):</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assuming 1 piece = 0.18 kg</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val <span class="op">*</span> <span class="fl">0.18</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.nan</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'size'</span>] <span class="op">=</span> select_df.<span class="bu">apply</span>(extract_size, axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Adjust price to per kg and quantity to kg sold</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'price'</span>] <span class="op">=</span> select_df[<span class="st">'price'</span>] <span class="op">/</span> select_df[<span class="st">'size'</span>]</span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'quantity'</span>] <span class="op">=</span> select_df[<span class="st">'quantity'</span>] <span class="op">*</span> select_df[<span class="st">'size'</span>]</span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>select_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>select_df <span class="op">=</span> select_df.drop(columns<span class="op">=</span>[<span class="st">'total_quantity'</span>, <span class="st">'quantity_share'</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div id="df-30669c60-7ce5-457c-810e-6c56b3bf91fd" class="colab-df-container">
+</div>
+<div id="cell-8" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:206}}" data-outputid="abfae973-0620-47ef-8a95-0dec10999bd5">
+<details open="" class="code-fold">
+<summary>Show the code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Extract package size from product description and convert to kg</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> extract_size(row):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    product_desc <span class="op">=</span> row[<span class="st">'product'</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract numeric value using regex (matches digits with optional decimal point)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    match <span class="op">=</span> re.search(<span class="vs">r"</span><span class="kw">(</span><span class="dv">\d</span><span class="op">+</span><span class="ch">\.</span><span class="op">?</span><span class="dv">\d</span><span class="op">*</span><span class="kw">)</span><span class="vs">"</span>, product_desc)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> match:</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.nan</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    val <span class="op">=</span> <span class="bu">float</span>(match.group(<span class="dv">1</span>))</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> product_desc.endswith(<span class="st">"kg"</span>):</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> product_desc.endswith(<span class="st">"gr"</span>):</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> val <span class="op">/</span> <span class="dv">1000</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.nan</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'size'</span>] <span class="op">=</span> select_df.<span class="bu">apply</span>(extract_size, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Adjust price to per kg and quantity to kg sold</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'price'</span>] <span class="op">=</span> select_df[<span class="st">'price'</span>] <span class="op">/</span> select_df[<span class="st">'size'</span>]</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>select_df[<span class="st">'quantity'</span>] <span class="op">=</span> select_df[<span class="st">'quantity'</span>] <span class="op">*</span> select_df[<span class="st">'size'</span>]</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>select_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div id="df-6f78b0ff-e586-4542-a57a-a9f92e4db851" class="colab-df-container">
     <div>
 
 
@@ -582,69 +583,69 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">5893</th>
+<th data-quarto-table-cell-role="th">1393</th>
 <td>2020-12</td>
-<td>annurca igp 1.0 kg</td>
-<td>3</td>
-<td>Apples</td>
-<td>Fruit</td>
-<td>2.480000</td>
-<td>69.350140</td>
+<td>aia aequilibrium bresaola tacchino 100.0 gr</td>
+<td>5</td>
+<td>Packaged Cured Meats</td>
+<td>Meat</td>
+<td>36.800000</td>
+<td>10.926244</td>
 <td>0</td>
-<td>171.988348</td>
-<td>1.0</td>
+<td>402.085773</td>
+<td>0.1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5894</th>
+<th data-quarto-table-cell-role="th">1394</th>
 <td>2021-01</td>
-<td>annurca igp 1.0 kg</td>
-<td>3</td>
-<td>Apples</td>
-<td>Fruit</td>
-<td>2.480000</td>
-<td>68.785516</td>
+<td>aia aequilibrium bresaola tacchino 100.0 gr</td>
+<td>5</td>
+<td>Packaged Cured Meats</td>
+<td>Meat</td>
+<td>27.513333</td>
+<td>12.867553</td>
 <td>0</td>
-<td>170.588080</td>
-<td>1.0</td>
+<td>354.029273</td>
+<td>0.1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">5895</th>
-<td>2021-02</td>
-<td>annurca igp 1.0 kg</td>
-<td>3</td>
-<td>Apples</td>
-<td>Fruit</td>
-<td>2.480000</td>
-<td>66.913959</td>
+<th data-quarto-table-cell-role="th">1395</th>
+<td>2021-04</td>
+<td>aia aequilibrium bresaola tacchino 100.0 gr</td>
+<td>5</td>
+<td>Packaged Cured Meats</td>
+<td>Meat</td>
+<td>26.900000</td>
+<td>11.940976</td>
 <td>0</td>
-<td>165.946619</td>
-<td>1.0</td>
+<td>321.212267</td>
+<td>0.1</td>
 </tr>
 <tr class="even">
-<th data-quarto-table-cell-role="th">5896</th>
-<td>2021-03</td>
-<td>annurca igp 1.0 kg</td>
-<td>3</td>
-<td>Apples</td>
-<td>Fruit</td>
-<td>2.542069</td>
-<td>74.887165</td>
+<th data-quarto-table-cell-role="th">1396</th>
+<td>2021-05</td>
+<td>aia aequilibrium bresaola tacchino 100.0 gr</td>
+<td>5</td>
+<td>Packaged Cured Meats</td>
+<td>Meat</td>
+<td>35.900000</td>
+<td>9.892491</td>
 <td>0</td>
-<td>190.368339</td>
-<td>1.0</td>
+<td>355.140441</td>
+<td>0.1</td>
 </tr>
 <tr class="odd">
-<th data-quarto-table-cell-role="th">5897</th>
-<td>2021-04</td>
-<td>annurca igp 1.0 kg</td>
-<td>3</td>
-<td>Apples</td>
-<td>Fruit</td>
-<td>2.580000</td>
-<td>70.781026</td>
+<th data-quarto-table-cell-role="th">1397</th>
+<td>2021-07</td>
+<td>aia aequilibrium bresaola tacchino 100.0 gr</td>
+<td>5</td>
+<td>Packaged Cured Meats</td>
+<td>Meat</td>
+<td>22.400000</td>
+<td>12.737603</td>
 <td>0</td>
-<td>182.615046</td>
-<td>1.0</td>
+<td>285.322303</td>
+<td>0.1</td>
 </tr>
 </tbody>
 </table>
@@ -653,7 +654,7 @@ window.Quarto = {
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-30669c60-7ce5-457c-810e-6c56b3bf91fd')" title="Convert this dataframe to an interactive table." style="display:none;">
+    <button class="colab-df-convert" onclick="convertToInteractive('df-6f78b0ff-e586-4542-a57a-a9f92e4db851')" title="Convert this dataframe to an interactive table." style="display:none;">
 
   <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox="0 -960 960 960">
     <path d="M120-120v-720h720v720H120Zm60-500h600v-160H180v160Zm220 220h160v-160H400v160Zm0 220h160v-160H400v160ZM180-400h160v-160H180v160Zm440 0h160v-160H620v160ZM180-180h160v-160H180v160Zm440 0h160v-160H620v160Z"></path>
@@ -703,12 +704,12 @@ window.Quarto = {
 
     <script>
       const buttonEl =
-        document.querySelector('#df-30669c60-7ce5-457c-810e-6c56b3bf91fd button.colab-df-convert');
+        document.querySelector('#df-6f78b0ff-e586-4542-a57a-a9f92e4db851 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-30669c60-7ce5-457c-810e-6c56b3bf91fd');
+        const element = document.querySelector('#df-6f78b0ff-e586-4542-a57a-a9f92e4db851');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -733,13 +734,13 @@ window.Quarto = {
 </div>
 </div>
 <p>We convert the dataframe into Polars, as this is the library used by PyIndexNum under the hood.</p>
-<div id="cell-9" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="a63cb4f8-f545-40b0-c834-915a0bcc5b6e">
+<div id="cell-10" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:255}}" data-outputid="09595c35-5ae4-4b3b-a6ba-39fb05fface3">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>select_pl <span class="op">=</span> pl.from_pandas(select_df)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>select_pl.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>select_pl <span class="op">=</span> pl.from_pandas(select_df)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>select_pl.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div><style>
 .dataframe > thead > tr,
 .dataframe > tbody > tr {
@@ -778,63 +779,63 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td>"2020-12"</td>
-<td>"annurca igp 1.0 kg"</td>
-<td>3</td>
-<td>"Apples"</td>
-<td>"Fruit"</td>
-<td>2.48</td>
-<td>69.35014</td>
+<td>"aia aequilibrium bresaola tacc…</td>
+<td>5</td>
+<td>"Packaged Cured Meats"</td>
+<td>"Meat"</td>
+<td>36.8</td>
+<td>10.926244</td>
 <td>0</td>
-<td>171.988348</td>
-<td>1.0</td>
+<td>402.085773</td>
+<td>0.1</td>
 </tr>
 <tr class="even">
 <td>"2021-01"</td>
-<td>"annurca igp 1.0 kg"</td>
-<td>3</td>
-<td>"Apples"</td>
-<td>"Fruit"</td>
-<td>2.48</td>
-<td>68.785516</td>
+<td>"aia aequilibrium bresaola tacc…</td>
+<td>5</td>
+<td>"Packaged Cured Meats"</td>
+<td>"Meat"</td>
+<td>27.513333</td>
+<td>12.867553</td>
 <td>0</td>
-<td>170.58808</td>
-<td>1.0</td>
-</tr>
-<tr class="odd">
-<td>"2021-02"</td>
-<td>"annurca igp 1.0 kg"</td>
-<td>3</td>
-<td>"Apples"</td>
-<td>"Fruit"</td>
-<td>2.48</td>
-<td>66.913959</td>
-<td>0</td>
-<td>165.946619</td>
-<td>1.0</td>
-</tr>
-<tr class="even">
-<td>"2021-03"</td>
-<td>"annurca igp 1.0 kg"</td>
-<td>3</td>
-<td>"Apples"</td>
-<td>"Fruit"</td>
-<td>2.542069</td>
-<td>74.887165</td>
-<td>0</td>
-<td>190.368339</td>
-<td>1.0</td>
+<td>354.029273</td>
+<td>0.1</td>
 </tr>
 <tr class="odd">
 <td>"2021-04"</td>
-<td>"annurca igp 1.0 kg"</td>
-<td>3</td>
-<td>"Apples"</td>
-<td>"Fruit"</td>
-<td>2.58</td>
-<td>70.781026</td>
+<td>"aia aequilibrium bresaola tacc…</td>
+<td>5</td>
+<td>"Packaged Cured Meats"</td>
+<td>"Meat"</td>
+<td>26.9</td>
+<td>11.940976</td>
 <td>0</td>
-<td>182.615046</td>
-<td>1.0</td>
+<td>321.212267</td>
+<td>0.1</td>
+</tr>
+<tr class="even">
+<td>"2021-05"</td>
+<td>"aia aequilibrium bresaola tacc…</td>
+<td>5</td>
+<td>"Packaged Cured Meats"</td>
+<td>"Meat"</td>
+<td>35.9</td>
+<td>9.892491</td>
+<td>0</td>
+<td>355.140441</td>
+<td>0.1</td>
+</tr>
+<tr class="odd">
+<td>"2021-07"</td>
+<td>"aia aequilibrium bresaola tacc…</td>
+<td>5</td>
+<td>"Packaged Cured Meats"</td>
+<td>"Meat"</td>
+<td>22.4</td>
+<td>12.737603</td>
+<td>0</td>
+<td>285.322303</td>
+<td>0.1</td>
 </tr>
 </tbody>
 </table>
@@ -848,37 +849,41 @@ window.Quarto = {
 <section id="data-preparation-for-pyindexnum" class="level3">
 <h3 class="anchored" data-anchor-id="data-preparation-for-pyindexnum">Data Preparation for pyindexnum</h3>
 <p>The <code>pyindexnum</code> library expects a specific format for the dataframe in order to perform index calculaktions. We will leverage the functions <code>standardize_columns</code> and <code>aggregate_time</code> for this.</p>
-<div id="cell-11" class="cell">
+<div id="cell-12" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use pyindexnum utility to prepare the dataframe</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This function handles date conversion, sorting, and ensures no missing values</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>standard_pl <span class="op">=</span> pin.utils.standardize_columns(</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    df<span class="op">=</span>select_pl,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    date_col<span class="op">=</span><span class="st">'month_year'</span>,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    price_col<span class="op">=</span><span class="st">'price'</span>,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    quantity_col<span class="op">=</span><span class="st">'quantity'</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    id_col<span class="op">=</span><span class="st">'product_id'</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    date_format<span class="op">=</span><span class="st">'%Y-%m'</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>agg_pl <span class="op">=</span> pin.utils.aggregate_time(</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    df<span class="op">=</span>standard_pl,</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    quantity_col<span class="op">=</span><span class="st">"quantity"</span>,</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    agg_type<span class="op">=</span><span class="st">"arithmetic"</span>,</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    freq<span class="op">=</span><span class="st">"1mo"</span></span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Use pyindexnum utility to prepare the dataframe</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This function handles date conversion, sorting, and ensures no missing values</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: complete the functions below with the correct arguments</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># You can help yourself checking the dataframe in antoher cell</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># with standard_pl.head() to see the names of the columns</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>standard_pl <span class="op">=</span> pin.utils.standardize_columns(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    df<span class="op">=</span>select_pl,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    date_col<span class="op">=</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    price_col<span class="op">=</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    quantity_col<span class="op">=</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    id_col<span class="op">=</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    date_format<span class="op">=</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>agg_pl <span class="op">=</span> pin.utils.aggregate_time(</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    df<span class="op">=</span>standard_pl,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    quantity_col<span class="op">=</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    agg_type<span class="op">=</span>,</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    freq<span class="op">=</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>We select the first 13 months for the first window for index calculation, and another window shifted by 1 month for the index extension exercise.</p>
-<div id="cell-13" class="cell">
+<div id="cell-14" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>periods <span class="op">=</span> <span class="bu">sorted</span>(agg_pl[<span class="st">"period"</span>].unique())</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>base_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[:<span class="dv">13</span>]))</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>extend_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[<span class="dv">1</span>:<span class="dv">14</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>periods <span class="op">=</span> <span class="bu">sorted</span>(agg_pl[<span class="st">"period"</span>].unique())</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>base_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[:<span class="dv">13</span>]))</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>extend_pl <span class="op">=</span> agg_pl.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>).is_in(periods[<span class="dv">1</span>:<span class="dv">14</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>Most index formulas require balanced data. We will leverage the utility functions in PyIndexNum to create two different datasets:</p>
@@ -886,14 +891,18 @@ window.Quarto = {
 <li>A dataset with only the product common across all periods</li>
 <li>Another dataset with carry forward imputation</li>
 </ol>
-<div id="cell-15" class="cell">
+<div id="cell-16" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>base_common_pl <span class="op">=</span> pin.utils.remove_unbalanced(base_pl)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>extend_common_pl <span class="op">=</span> pin.utils.remove_unbalanced(extend_pl)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>base_imputed_pl <span class="op">=</span> pin.utils.carry_forward_imputation(base_pl, [<span class="st">"aggregated_price"</span>, <span class="st">"aggregated_quantity"</span>])</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>extend_imputed_pl <span class="op">=</span> pin.utils.carry_forward_imputation(extend_pl, [<span class="st">"aggregated_price"</span>, <span class="st">"aggregated_quantity"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: REMOVE unbalanced rows and perfom imputation</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Only common products</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>base_common_pl <span class="op">=</span> </span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>extend_common_pl <span class="op">=</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Data imputation</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>base_imputed_pl <span class="op">=</span> </span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>extend_imputed_pl <span class="op">=</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -904,233 +913,146 @@ window.Quarto = {
 <li><strong>GEKS-Fisher</strong>: Uses the Fisher Ideal index as the bilateral base.</li>
 <li><strong>GEKS-Tornqvist</strong>: Uses the Tornqvist index as the bilateral base.</li>
 </ul>
-<div id="cell-17" class="cell">
+<div id="cell-18" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate GEKS-Fisher and GEKS-Tornqvist</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>geks_f <span class="op">=</span> pin.geks_fisher(base_common_pl)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>geks_t <span class="op">=</span> pin.geks_tornqvist(base_common_pl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate GEKS-Fisher and GEKS-Tornqvist</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: calculate the indices. You can choose between the common products only and the imputation</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>geks_f <span class="op">=</span> </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>geks_t <span class="op">=</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-18" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="57dc8700-bfd2-4104-a01a-b4738b932a09">
+<div id="cell-19" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="23a26f62-5320-4154-c382-29e665bbd1c3">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(geks_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(geks_f)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>shape: (13, 2)
-┌────────────┬─────────────┐
-│ period     ┆ index_value │
-│ ---        ┆ ---         │
-│ date       ┆ f64         │
-╞════════════╪═════════════╡
-│ 2020-12-01 ┆ 1.0         │
-│ 2021-01-01 ┆ 0.998805    │
-│ 2021-02-01 ┆ 1.043191    │
-│ 2021-03-01 ┆ 1.081976    │
-│ 2021-04-01 ┆ 1.081973    │
-│ 2021-05-01 ┆ 1.082257    │
-│ 2021-06-01 ┆ 1.082189    │
-│ 2021-07-01 ┆ 1.082146    │
-│ 2021-08-01 ┆ 1.082487    │
-│ 2021-09-01 ┆ 1.082223    │
-│ 2021-10-01 ┆ 1.08276     │
-│ 2021-11-01 ┆ 1.082271    │
-│ 2021-12-01 ┆ 1.082319    │
-└────────────┴─────────────┘</code></pre>
-</div>
 </div>
 </section>
 <section id="time-product-dummy-tpd" class="level3">
 <h3 class="anchored" data-anchor-id="time-product-dummy-tpd">2. Time Product Dummy (TPD)</h3>
 <p>The <strong>TPD index</strong> is a regression-based multilateral index. It models the log of prices as a function of time dummies and product dummies. It is the multilateral generalization of the Jevons index but weighted by expenditure shares. Since this method does not require a balanced panel, we will calculate it using all available data.</p>
-<div id="cell-20" class="cell">
+<div id="cell-21" class="cell">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate Time Product Dummy index</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>tpd_index <span class="op">=</span> pin.time_product_dummy(base_pl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: calculate the TPD index on the full dataframe</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>tpd_index <span class="op">=</span> </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cell-21" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="156cc323-7f6e-43f1-e93a-37499e836ed2">
+<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="c0175301-a200-4d2b-c28c-378240279edb">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(tpd_index)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>shape: (13, 2)
-┌────────────┬─────────────┐
-│ period     ┆ index_value │
-│ ---        ┆ ---         │
-│ date       ┆ f64         │
-╞════════════╪═════════════╡
-│ 2020-12-01 ┆ 1.0         │
-│ 2021-01-01 ┆ 0.997804    │
-│ 2021-02-01 ┆ 1.008862    │
-│ 2021-03-01 ┆ 1.022016    │
-│ 2021-04-01 ┆ 1.060903    │
-│ 2021-05-01 ┆ 1.071532    │
-│ 2021-06-01 ┆ 1.06587     │
-│ 2021-07-01 ┆ 1.056891    │
-│ 2021-08-01 ┆ 1.057528    │
-│ 2021-09-01 ┆ 1.047486    │
-│ 2021-10-01 ┆ 1.051849    │
-│ 2021-11-01 ┆ 1.093369    │
-│ 2021-12-01 ┆ 1.089898    │
-└────────────┴─────────────┘</code></pre>
 </div>
-</div>
-<div id="cell-22" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="f9bb530a-84c9-4184-d005-bd021c47e423">
+<div id="cell-23" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="7e2d1a6c-53e8-467c-c78f-0e7bc4290871">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the index_value columns to match their index names</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tpd_renamed <span class="op">=</span> tpd_index.rename({<span class="st">"index_value"</span>: <span class="st">"TPD"</span>})</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>geks_f_renamed <span class="op">=</span> geks_f.rename({<span class="st">"index_value"</span>: <span class="st">"GEKS_Fisher"</span>})</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>geks_t_renamed <span class="op">=</span> geks_t.rename({<span class="st">"index_value"</span>: <span class="st">"GEKS_Tornqvist"</span>})</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the dataframes together on the period column</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>merged_indices <span class="op">=</span> tpd_renamed.join(</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    geks_f_renamed, on<span class="op">=</span><span class="st">"period"</span>, how<span class="op">=</span><span class="st">"inner"</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>).join(</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    geks_t_renamed, on<span class="op">=</span><span class="st">"period"</span>, how<span class="op">=</span><span class="st">"inner"</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the merged results</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(merged_indices)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the index_value columns to match their index names</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>tpd_renamed <span class="op">=</span> tpd_index.rename({<span class="st">"index_value"</span>: <span class="st">"TPD"</span>})</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>geks_f_renamed <span class="op">=</span> geks_f.rename({<span class="st">"index_value"</span>: <span class="st">"GEKS_Fisher"</span>})</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>geks_t_renamed <span class="op">=</span> geks_t.rename({<span class="st">"index_value"</span>: <span class="st">"GEKS_Tornqvist"</span>})</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Join the dataframes together on the period column</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>merged_indices <span class="op">=</span> tpd_renamed.join(</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    geks_f_renamed, on<span class="op">=</span><span class="st">"period"</span>, how<span class="op">=</span><span class="st">"inner"</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>).join(</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    geks_t_renamed, on<span class="op">=</span><span class="st">"period"</span>, how<span class="op">=</span><span class="st">"inner"</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Display the merged results</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">15</span>):</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(merged_indices)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>shape: (13, 4)
-┌────────────┬──────────┬─────────────┬────────────────┐
-│ period     ┆ TPD      ┆ GEKS_Fisher ┆ GEKS_Tornqvist │
-│ ---        ┆ ---      ┆ ---         ┆ ---            │
-│ date       ┆ f64      ┆ f64         ┆ f64            │
-╞════════════╪══════════╪═════════════╪════════════════╡
-│ 2020-12-01 ┆ 1.0      ┆ 1.0         ┆ 1.0            │
-│ 2021-01-01 ┆ 0.997804 ┆ 0.998805    ┆ 0.998924       │
-│ 2021-02-01 ┆ 1.008862 ┆ 1.043191    ┆ 1.043308       │
-│ 2021-03-01 ┆ 1.022016 ┆ 1.081976    ┆ 1.082041       │
-│ 2021-04-01 ┆ 1.060903 ┆ 1.081973    ┆ 1.082049       │
-│ 2021-05-01 ┆ 1.071532 ┆ 1.082257    ┆ 1.082343       │
-│ 2021-06-01 ┆ 1.06587  ┆ 1.082189    ┆ 1.082271       │
-│ 2021-07-01 ┆ 1.056891 ┆ 1.082146    ┆ 1.082233       │
-│ 2021-08-01 ┆ 1.057528 ┆ 1.082487    ┆ 1.082575       │
-│ 2021-09-01 ┆ 1.047486 ┆ 1.082223    ┆ 1.082311       │
-│ 2021-10-01 ┆ 1.051849 ┆ 1.08276     ┆ 1.082862       │
-│ 2021-11-01 ┆ 1.093369 ┆ 1.082271    ┆ 1.08236        │
-│ 2021-12-01 ┆ 1.089898 ┆ 1.082319    ┆ 1.082405       │
-└────────────┴──────────┴─────────────┴────────────────┘</code></pre>
-</div>
 </div>
 </section>
 <section id="window-extension-and-splicing-methods" class="level3">
 <h3 class="anchored" data-anchor-id="window-extension-and-splicing-methods">3. Window Extension and Splicing Methods</h3>
 <p>Since multilateral indices are calculated over a fixed window (e.g., 13 months), adding a new month (month 14) would change the results for the previous 13 months if we recalculated everything. To maintain a stable historical series, we use <strong>Splicing</strong>.</p>
-<p>We will demonstrate how to extend the <strong>GEKS-Tornqvist</strong> index using different splice methods: * <strong>Movement Splice</strong>: Links the new movement to the last available index. * <strong>Window Splice</strong>: Links the new window to the period at the start of the window. * <strong>Mean Splice</strong>: Uses the geometric mean of all possible splices within the window.</p>
-<div id="cell-24" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="5b7bf837-eeb7-4eb6-f00b-be9dc3f9c5b6">
+<p>We will demonstrate how to extend the <strong>TPD</strong> index using different splice methods: * <strong>Movement Splice</strong>: Links the new movement to the last available index. * <strong>Window Splice</strong>: Links the new window to the period at the start of the window. * <strong>Mean Splice</strong>: Uses the geometric mean of all possible splices within the window. * <strong>Fixd Base Rolling Window</strong>: Uses a fixed period common to both windows as common base.</p>
+<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}}" data-outputid="6a7175d2-f2fb-415e-8008-61431cf3aa78">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the three multilateral methods for the extended dataset</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>extend_geks_f <span class="op">=</span> pin.geks_fisher(extend_common_pl)</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>extend_geks_t <span class="op">=</span> pin.geks_tornqvist(extend_common_pl)</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>extend_tpd <span class="op">=</span> pin.time_product_dummy(extend_common_pl)</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Demonstrate extensions for GEKS-Tornqvist</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># We use the index calculated on the base window (geks_t)</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># and the index calculated on the extended window (extend_geks_t)</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Movement Splice</span></span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>movement_splice <span class="op">=</span> pin.extension.movement_splice(geks_t, extend_geks_t)</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Window Splice</span></span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>window_splice <span class="op">=</span> pin.extension.window_splice(geks_t, extend_geks_t)</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean Splice</span></span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>mean_splice <span class="op">=</span> pin.extension.mean_splice(geks_t, extend_geks_t)</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixed Base Rolling Window (FBRW) using '2021-12-01' as the link period</span></span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>fbrw_index <span class="op">=</span> pin.extension.fixed_base_rolling_window(</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    geks_t,</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>    extend_geks_t,</span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>    base_period<span class="op">=</span><span class="st">"2021-12-01"</span></span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the extension results for the last available periods</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>extension_comparison <span class="op">=</span> pl.DataFrame({</span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"period"</span>: fbrw_index.tail(<span class="dv">5</span>)[<span class="st">"period"</span>],</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FBRW"</span>: fbrw_index.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Movement"</span>: movement_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Window"</span>: window_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mean"</span>: mean_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>]</span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Comparison of Extension Methods (Last 5 months):"</span>)</span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>):</span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(extension_comparison)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate the three multilateral methods for the extended dataset</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Calculate the indices</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>extend_geks_f <span class="op">=</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>extend_geks_t <span class="op">=</span> </span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>extend_tpd <span class="op">=</span> </span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Demonstrate extensions for TPD</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># We use the index calculated on the base window (geks_t)</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="co"># and the index calculated on the extended window (extend_geks_t)</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: Extend the TPD index with the different methodologies</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Movement Splice</span></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>movement_splice <span class="op">=</span> </span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Window Splice</span></span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>window_splice <span class="op">=</span> </span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Mean Splice</span></span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>mean_splice <span class="op">=</span> </span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Fixed Base Rolling Window (FBRW) using '2021-12-01' as the link period</span></span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>fbrw_index <span class="op">=</span> </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Displaying the extension results for the last available periods</span></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>extension_comparison <span class="op">=</span> pl.DataFrame({</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"period"</span>: fbrw_index.tail(<span class="dv">5</span>)[<span class="st">"period"</span>],</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"FBRW"</span>: fbrw_index.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Movement"</span>: movement_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Window"</span>: window_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>],</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Mean"</span>: mean_splice.tail(<span class="dv">5</span>)[<span class="st">"index_value"</span>]</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Comparison of Extension Methods (Last 5 months):"</span>)</span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(extension_comparison)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Comparison of Extension Methods (Last 5 months):
-shape: (5, 5)
-┌────────────┬──────────┬──────────┬──────────┬──────────┐
-│ period     ┆ FBRW     ┆ Movement ┆ Window   ┆ Mean     │
-│ ---        ┆ ---      ┆ ---      ┆ ---      ┆ ---      │
-│ date       ┆ f64      ┆ f64      ┆ f64      ┆ f64      │
-╞════════════╪══════════╪══════════╪══════════╪══════════╡
-│ 2021-09-01 ┆ 1.082311 ┆ 1.082311 ┆ 1.082311 ┆ 1.082311 │
-│ 2021-10-01 ┆ 1.082862 ┆ 1.082862 ┆ 1.082862 ┆ 1.082862 │
-│ 2021-11-01 ┆ 1.08236  ┆ 1.08236  ┆ 1.08236  ┆ 1.08236  │
-│ 2021-12-01 ┆ 1.082405 ┆ 1.082405 ┆ 1.082405 ┆ 1.082405 │
-│ 2022-01-01 ┆ 1.085916 ┆ 1.082561 ┆ 1.083071 ┆ 1.082592 │
-└────────────┴──────────┴──────────┴──────────┴──────────┘</code></pre>
 </div>
-</div>
-<div id="cell-25" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:474}}" data-outputid="7b559bc3-a6ab-41df-d9a3-42bd33d14035">
+<div id="cell-26" class="cell" data-quarto-private-1="{&quot;key&quot;:&quot;colab&quot;,&quot;value&quot;:{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:607}}" data-outputid="0fb6daa5-395e-4a4b-b6e4-c7f72d089b93">
 <details open="" class="code-fold">
 <summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare historical data (up to 2021-12-01)</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> geks_t</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>last_date <span class="op">=</span> history[<span class="st">"period"</span>].<span class="bu">max</span>()</span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>last_val <span class="op">=</span> history.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>) <span class="op">==</span> last_date)[<span class="st">"index_value"</span>][<span class="dv">0</span>]</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the extensions for 2022-01-01</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>ext_date <span class="op">=</span> extension_comparison[<span class="st">"period"</span>][<span class="dv">4</span>]</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot original series</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>plt.plot(history[<span class="st">"period"</span>], history[<span class="st">"index_value"</span>], label<span class="op">=</span><span class="st">'Original GEKS-T'</span>, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define extensions to plot from the last historical point</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>extensions <span class="op">=</span> [</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'FBRW'</span>, extension_comparison[<span class="st">"FBRW"</span>][<span class="dv">4</span>], <span class="st">'red'</span>),</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Movement'</span>, extension_comparison[<span class="st">"Movement"</span>][<span class="dv">4</span>], <span class="st">'green'</span>),</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Window'</span>, extension_comparison[<span class="st">"Window"</span>][<span class="dv">4</span>], <span class="st">'orange'</span>),</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Mean'</span>, extension_comparison[<span class="st">"Mean"</span>][<span class="dv">4</span>], <span class="st">'purple'</span>)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>]</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot each extension as a segment from the last known point</span></span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, val, color <span class="kw">in</span> extensions:</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    plt.plot([last_date, ext_date], [last_val, val], color<span class="op">=</span>color, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'s'</span>, label<span class="op">=</span><span class="ss">f'Ext: </span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">'</span>)</span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'GEKS-Tornqvist Index Extension Comparison'</span>)</span>
-<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Period'</span>)</span>
-<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Index Value'</span>)</span>
-<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prepare historical data (up to 2021-12-01)</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>history <span class="op">=</span> tpd_index</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>last_date <span class="op">=</span> history[<span class="st">"period"</span>].<span class="bu">max</span>()</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>last_val <span class="op">=</span> history.<span class="bu">filter</span>(pl.col(<span class="st">"period"</span>) <span class="op">==</span> last_date)[<span class="st">"index_value"</span>][<span class="dv">0</span>]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract the extensions for 2022-01-01</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>ext_date <span class="op">=</span> extension_comparison[<span class="st">"period"</span>][<span class="dv">4</span>]</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot original series</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>plt.plot(history[<span class="st">"period"</span>], history[<span class="st">"index_value"</span>], label<span class="op">=</span><span class="st">'Original TPD'</span>, color<span class="op">=</span><span class="st">'blue'</span>, linewidth<span class="op">=</span><span class="dv">2</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Define extensions to plot from the last historical point</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>extensions <span class="op">=</span> [</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'FBRW'</span>, extension_comparison[<span class="st">"FBRW"</span>][<span class="dv">4</span>], <span class="st">'red'</span>),</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Movement'</span>, extension_comparison[<span class="st">"Movement"</span>][<span class="dv">4</span>], <span class="st">'green'</span>),</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Window'</span>, extension_comparison[<span class="st">"Window"</span>][<span class="dv">4</span>], <span class="st">'orange'</span>),</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    (<span class="st">'Mean'</span>, extension_comparison[<span class="st">"Mean"</span>][<span class="dv">4</span>], <span class="st">'purple'</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot each extension as a segment from the last known point</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> label, val, color <span class="kw">in</span> extensions:</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    plt.plot([last_date, ext_date], [last_val, val], color<span class="op">=</span>color, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'s'</span>, label<span class="op">=</span><span class="ss">f'Ext: </span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'TPD Index Extension Comparison'</span>)</span>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Period'</span>)</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Index Value'</span>)</span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_calculation_Python_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
 </div>
 
 
