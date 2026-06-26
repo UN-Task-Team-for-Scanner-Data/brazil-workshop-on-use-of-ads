@@ -43,7 +43,7 @@ If you have any questions, raise questions using the chat of the all-day meeting
 
 ## Thrusday June 24
 
-Asynchronous Activities (self paced). Check out the [Index calculation exercises in R](/notebooks/Index_Calculation_Exercises_in_R.ipynb) and (solutions) and the same in [Python](/notebooks/index_calculation_exercises_Python.ipynb) (and [solutions](/notebooks/index_calculation_exercises_solutions_Python.ipynb))
+Asynchronous Activities (self paced). Check out the [Index calculation exercises in R](/notebooks/Index_Calculation_Exercises_in_R.ipynb) and ([solutions](/notebooks/Index_Calculation_Exercises_Solutions_in_R.ipynb)) and the same in [Python](/notebooks/index_calculation_exercises_Python.ipynb) (and [solutions](/notebooks/index_calculation_exercises_solutions_Python.ipynb))
 
 ## Friday June 26
 
