@@ -186,14 +186,14 @@
     "href": "content/agenda.html#thrusday-june-24",
     "title": "Event agenda",
     "section": "Thrusday June 24",
-    "text": "Thrusday June 24\nAsynchronous Activities (self paced)"
+    "text": "Thrusday June 24\nAsynchronous Activities (self paced). Check out the Index calculation exercises in R and (solutions) and the same in Python (and solutions)"
   },
   {
     "objectID": "content/agenda.html#friday-june-26",
     "href": "content/agenda.html#friday-june-26",
     "title": "Event agenda",
     "section": "Friday June 26",
-    "text": "Friday June 26\n\n\n\n\n\n\n\n\nTime\nSession\nSpeakers / Facilitator\n\n\n\n\n10:00 – 10:45\nReport on the asynchronous activities and further discussion on multilateral indices\nParticipants / All the speakers of Day 2\n\n\n10:45 – 11:15\nQuality assurance, validation, and comparison with traditional price data\nTanya Flower (UNTT, UK ONS)\n\n\n11:15 – 11:45\nInstitutional and operational considerations for integrating scanner data into regular statistical production\nHelen Sands (UNTT, UK ONS)\n\n\n11:45 – 12:00\nConclusion and way forward\nTanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE)"
+    "text": "Friday June 26\n\n\n\nTime\nSession\nSpeakers / Facilitator\n\n\n\n\n10:00 – 10:45\nReport on the asynchronous activities and further discussion on multilateral indices\nParticipants / All the speakers of Day 2\n\n\n10:45 – 11:15\nQuality assurance, validation, and comparison with traditional price data\nTanya Flower (UNTT, UK ONS)\n\n\n11:15 – 11:45\nInstitutional and operational considerations for integrating scanner data into regular statistical production\nHelen Sands (UNTT, UK ONS)\n\n\n11:45 – 12:00\nConclusion and way forward\nTanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE)"
   },
   {
     "objectID": "notebooks/Index_Calculation_Exercises_Solutions_in_R.html#dataset",
