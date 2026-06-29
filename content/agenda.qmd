@@ -50,6 +50,6 @@ Asynchronous Activities (self paced). Check out the [Index calculation exercises
 | Time | **Session** | **Speakers / Facilitator** |
 |-----------------|-----------------------|--------------------------------|
 | 10:00 – 10:45 | Report on the asynchronous activities and further discussion on multilateral indices | Participants / All the speakers of Day 2 |
-| 10:45 – 11:15 | Quality assurance, validation, and comparison with traditional price data | Tanya Flower (UNTT, UK ONS) |
+| 10:45 – 11:15 | [Quality assurance, validation, and comparison with traditional price data](/content/presentations/6-Quality-of-ADS.pdf) | Tanya Flower (UNTT, UK ONS) |
 | 11:15 – 11:45 | [Institutional and operational considerations for integrating scanner data into regular statistical production](/content/presentations/7-Institutional-and-operational-considerations-for-integrating-scanner-data-into-regular-statistical-production.pdf) | Helen Sands (UNTT, UK ONS) |
 | 11:45 – 12:00 | Conclusion and way forward | Tanya Flower (UNTT, UK ONS), Vladimir Goncalves Miranda / Lincoln Teixeira da Silva / Bruno Garcia / Paulo Tostes dos Santos (UN Regional Hub, IBGE) |
